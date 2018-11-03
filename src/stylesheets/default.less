@@ -1,0 +1,94 @@
+@import './variables';
+
+* {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    background-color: @color-bg;
+    color: @color-heading;
+    height: 100%;
+}
+
+html {
+    .font-1;
+    -webkit-text-size-adjust: none;
+    -ms-content-zooming: none;
+}
+
+
+body,
+button,
+input,
+textarea {
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+textarea {
+    appearance: none;
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+p {
+    color: @color-text;
+}
+
+a {
+    color: @color-black;
+    transition: all .1s ease-in-out;
+
+    &:hover {
+        color: @color-black;
+    }
+
+    &:active {
+        color: @color-black;
+    }
+}
+
+[id='app'] {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    > div {
+        height: 100%;
+    }
+}
+
+
+h1 {
+    .display-1;
+}
+h2 {
+    .display-2;
+}
+h3 {
+    .display-3;
+}
+h4 {
+    .display-4;
+}
+li, p {
+    .text-1;
+}
+
+main {
+    display: block;
+}
