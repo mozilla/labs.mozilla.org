@@ -1,0 +1,32 @@
+@import '../../stylesheets/variables';
+
+.content {
+
+    &[data-observing='true'] {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+        transition: .5s 1s;
+    }
+    &[data-intersection='true'] {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .inner {
+        height: 100%;
+        width: 100%;
+
+        .text {
+            color: inherit;
+        }
+    }
+
+
+    @media (max-width: @mobile-l-width) {
+        margin-bottom: 20px;
+
+        .inner {
+            margin-top: 6px;
+        }
+    }
+}

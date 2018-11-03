@@ -15,20 +15,16 @@ export default withStyles(styles)(
 
         render() {
             const {
-                buttons,
-                imagesContentBlocks
+                description,
+                listImageItems
             } = this.props;
 
             return <div className={styles.content}>
                 <div className={styles.inner}>
                     <div className={styles.text}>
-                        {buttons && buttons.length && buttons
-                            .filter(Boolean)
-                            .map(([Component, props], index) =>
-                                <Component key={props.id + index} {...props}/>
-                            )}
+                        <p>{description}</p>
 
-                        {imagesContentBlocks && imagesContentBlocks.length && imagesContentBlocks
+                        {listImageItems && listImageItems.length && listImageItems
                             .filter(Boolean)
                             .map(([Component, props], index) =>
                                 <Component key={props.id + index} {...props}/>
