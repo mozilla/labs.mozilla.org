@@ -14,31 +14,23 @@ export default withStyles(styles)(
         }
 
         render() {
+            // console.log('left right', this.props);
+
             const {
-                title,
                 buttons,
-                description,
-                backgroundImage: {
-                    title: backgroundImageTitle = '',
-                    url,
-                    details: {
-                        image: {
-                            width
-                        } = {}
-                    } = {}
-                } = {}
+                imagesContentBlocks
             } = this.props;
 
             return <div className={styles.content}>
-                <div
-                    style={{backgroundImage: url}}
-                    className={styles.inner}
-                >
+                <div className={styles.inner}>
                     <div className={styles.text}>
-                        <h1>{title}</h1>
-                        <p>{description}</p>
-
                         {buttons && buttons.length && buttons
+                            .filter(Boolean)
+                            .map(([Component, props], index) =>
+                                <Component key={props.id + index} {...props}/>
+                            )}
+
+                        {imagesContentBlocks && imagesContentBlocks.length && imagesContentBlocks
                             .filter(Boolean)
                             .map(([Component, props], index) =>
                                 <Component key={props.id + index} {...props}/>

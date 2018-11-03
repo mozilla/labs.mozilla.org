@@ -14,13 +14,50 @@ export default withStyles(styles)(
         }
 
         render() {
-            console.log('footer', this.props);
+            const {
+                copyright,
+                buttonsBlock,
+                links,
+                linksBlock,
+                logo: {
+                    title,
+                    url,
+                    details: {
+                        image: {
+                            width
+                        } = {}
+                    } = {}
+                } = {}
+            } = this.props;
 
             return <div className={styles.content}>
                 <div className={styles.inner}>
                     <div className={styles.text}>
-                        <h1>null</h1>
+                        <p>footer</p>
                     </div>
+
+                    <img src={url} alt={title}/>
+
+                    <p>{copyright}</p>
+
+
+                    {links && links.length && links
+                        .filter(Boolean)
+                        .map(([Component, props], index) =>
+                            <Component key={props.id + index} {...props}/>
+                        )}
+
+                    {linksBlock && linksBlock.length && linksBlock
+                        .filter(Boolean)
+                        .map(([Component, props], index) =>
+                            <Component key={props.id + index} {...props}/>
+                        )}
+
+                    {buttonsBlock && buttonsBlock.length && buttonsBlock
+                        .filter(Boolean)
+                        .map(([Component, props], index) =>
+                            <Component key={props.id + index} {...props}/>
+                        )}
                 </div>
             </div>
         }

@@ -16,33 +16,25 @@ export default withStyles(styles)(
         render() {
             const {
                 title,
-                buttons,
                 description,
-                backgroundImage: {
-                    title: backgroundImageTitle = '',
+                button: [Component, props] = [],
+                imagePosition,
+                image: {
+                    title: imageTitle,
                     url,
                     details: {
-                        image: {
-                            width
-                        } = {}
+                        image: {width} = {}
                     } = {}
                 } = {}
             } = this.props;
 
             return <div className={styles.content}>
-                <div
-                    style={{backgroundImage: url}}
-                    className={styles.inner}
-                >
+                <div className={styles.inner}>
                     <div className={styles.text}>
                         <h1>{title}</h1>
                         <p>{description}</p>
-
-                        {buttons && buttons.length && buttons
-                            .filter(Boolean)
-                            .map(([Component, props], index) =>
-                                <Component key={props.id + index} {...props}/>
-                            )}
+                        {Component && <Component {...props}/>}
+                        <img src={url} alt={imageTitle}/>
                     </div>
                 </div>
             </div>

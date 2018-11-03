@@ -23,7 +23,7 @@
         "test": "jest",
         "test-cover": "yarn run test --coverage",
         "test-watch": "yarn run test --watch --notify",
-        "local": "SET SPACE_ID=uup98057no8e && SET SPACE_API_KEY=c3c86bc9e1175ae06dbb3314873d3fb73a8e7aa322a34a68d7bd94aa21273dd6 && babel-node tools/run start"
+        "local": "SPACE_ID=uup98057no8e SPACE_API_KEY=c3c86bc9e1175ae06dbb3314873d3fb73a8e7aa322a34a68d7bd94aa21273dd6 babel-node tools/run start"
     },
     "dependencies": {
         "@babel/polyfill": "7.0.0",
@@ -158,7 +158,7 @@
         ]
     },
     "main": "index.js",
-    "repository": "",
+    "repository": "git@gitlab.com:ramotion/mozilla-labs.git",
     "description": "Firefox Labs landing",
     "author": "Vlad Shumov <shumov.vlad@gmail.com>",
     "license": "MIT"

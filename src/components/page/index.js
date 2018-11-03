@@ -90,7 +90,7 @@ export default withStyles(styles)(
                     footer: [Footer, footerProps] = []
                 } = this.props;
 
-                console.log(content);
+                // console.log(content);
 
                 const compiledContent = [].concat(content)
                     .filter(data => data instanceof Array && data.length === 2)

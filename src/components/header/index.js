@@ -14,12 +14,28 @@ export default withStyles(styles)(
         }
 
         render() {
-            console.log('header', this.props);
+            const {
+                logo: {
+                    url,
+                    title,
+                    details: {
+                        image: {
+                            width
+                        } = {}
+                    } = {}
+                } = {},
+                items
+            } = this.props;
 
             return <div className={styles.content}>
                 <div className={styles.inner}>
                     <div className={styles.text}>
-                        <h1>null</h1>
+                        <img src={url} alt={title}/>
+
+                        {items && items.length && items
+                            .map(([Component, props], index) =>
+                                <Component key={props.id + index} {...props}/>
+                            )}
                     </div>
                 </div>
             </div>
