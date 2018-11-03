@@ -13,20 +13,26 @@
     }
 
     .inner {
-        height: 100%;
-        width: 100%;
+        display: flex;
+        align-items: center;
+
+        .logo {
+            height: 56px;
+            margin-right: 30px;
+
+            img {
+                max-height: 56px;
+            }
+        }
 
         .text {
-            color: inherit;
+            a {
+                margin-right: 20px ;
+            }
         }
     }
 
-
     @media (max-width: @mobile-l-width) {
-        margin-bottom: 20px;
-
-        .inner {
-            margin-top: 6px;
-        }
+        margin-bottom: 20px
     }
 }

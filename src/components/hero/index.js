@@ -29,9 +29,11 @@ export default withStyles(styles)(
                 } = {}
             } = this.props;
 
-            return <div className={styles.content}>
+            return <div
+                className={styles.content}
+                style={{backgroundImage: `url(${url})`}}
+            >
                 <div
-                    style={{backgroundImage: url}}
                     className={styles.inner}
                 >
                     <div className={styles.text}>

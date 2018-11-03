@@ -1,6 +1,8 @@
 @import '../../stylesheets/variables';
 
 .content {
+    background: no-repeat center;
+    color: #FFF;
 
     &[data-observing='true'] {
         opacity: 0;
@@ -13,14 +15,31 @@
     }
 
     .inner {
+        .component-wrap;
         height: 100%;
         width: 100%;
 
+        padding-top: 100px;
+        padding-bottom: 200px;
+
         .text {
-            color: inherit;
+            max-width: 50%;
+
+            h1 {
+                margin-bottom: 30px;
+            }
+
+            p {
+                color: #FFF;
+                margin-bottom: 20px;
+            }
+
+            a {
+                color: #FFF;
+                margin-right: 10px;
+            }
         }
     }
-
 
     @media (max-width: @mobile-l-width) {
         margin-bottom: 20px;

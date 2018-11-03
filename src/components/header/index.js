@@ -29,9 +29,11 @@ export default withStyles(styles)(
 
             return <div className={styles.content}>
                 <div className={styles.inner}>
-                    <div className={styles.text}>
+                    <div className={styles.logo}>
                         <img src={url} alt={title}/>
+                    </div>
 
+                    <div className={styles.text}>
                         {items && items.length && items
                             .map(([Component, props], index) =>
                                 <Component key={props.id + index} {...props}/>
