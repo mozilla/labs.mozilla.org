@@ -27,9 +27,18 @@ export default withStyles(styles)(
 
             return <div className={styles.content}>
                 <div className={styles.inner}>
+                    <div className={styles.media}>
+                        <img
+                            // src={`${url}?w=${Math.ceil(width/2).toFixed()}`}
+                            // srcSet={`${url} 2x`}
+                            src={url}
+                            alt={title}
+                        />
+                    </div>
+
                     <div className={styles.text}>
                         <p>{description}</p>
-                        <img src={url} alt={title}/>
+
                     </div>
                 </div>
             </div>

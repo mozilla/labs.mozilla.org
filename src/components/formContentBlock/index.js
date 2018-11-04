@@ -26,10 +26,25 @@ export default withStyles(styles)(
 
             return <div className={styles.content}>
                 <div className={styles.inner}>
-                    <div className={styles.text}>
-                        <h1>{title}</h1>
+                    <div className={styles.media}>
+                        <img
+                            src={`${url}?w=${Math.ceil(width/2).toFixed()}`}
+                            srcSet={`${url} 2x`}
+                            alt={title}/>
+                    </div>
 
-                        <img src={url} alt={title}/>
+                    <div className={styles.text}>
+                        <div>
+                            <h1>{title}</h1>
+
+                            <label htmlFor="email_signup">
+                                <input id="email_signup" type="email"/>
+                            </label>
+
+                            <div>
+                                <button>Sign up</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

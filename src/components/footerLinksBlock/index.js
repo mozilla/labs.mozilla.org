@@ -14,9 +14,14 @@ export default withStyles(styles)(
         }
 
         render() {
-            const {links} = this.props;
+            const {
+                title,
+                links
+            } = this.props;
 
             return <div className={styles.content}>
+                <h3>{title}</h3>
+
                 <div className={styles.inner}>
                     {links && links.length && links
                         .filter(Boolean)

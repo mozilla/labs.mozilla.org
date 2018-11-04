@@ -1,6 +1,9 @@
 @import '../../stylesheets/variables';
 
 .content {
+    background-color: black;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     &[data-observing='true'] {
         opacity: 0;
@@ -15,9 +18,17 @@
     .inner {
         height: 100%;
         width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
 
         .text {
-            color: inherit;
+            margin-bottom: 40px;
+
+            h1 {
+                color: #FFF;
+                margin: 20px 0 30px;
+            }
         }
     }
 

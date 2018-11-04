@@ -26,11 +26,14 @@ export default withStyles(styles)(
 
             return <div className={styles.content}>
                 <div className={styles.inner}>
+                    <div className={styles.media}>
+                        <img src={url} alt={imageTitle}/>
+                    </div>
+
                     <div className={styles.text}>
-                        <h1>{title}</h1>
+                        <h3>{title}</h3>
                         <p>{description}</p>
 
-                        <img src={url} alt={imageTitle}/>
                     </div>
                 </div>
             </div>

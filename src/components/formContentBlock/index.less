@@ -1,6 +1,7 @@
 @import '../../stylesheets/variables';
 
 .content {
+    .component-wrap;
 
     &[data-observing='true'] {
         opacity: 0;
@@ -15,9 +16,22 @@
     .inner {
         height: 100%;
         width: 100%;
+        display: flex;
+
+        > div {
+            width: 50%;
+        }
+
+        .text,
+        .media {
+            color: inherit;
+        }
 
         .text {
-            color: inherit;
+            display: flex;
+            flex-direction: column;
+            //align-items: center;
+            justify-content: center;
         }
     }
 

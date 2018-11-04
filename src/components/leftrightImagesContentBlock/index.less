@@ -1,6 +1,7 @@
 @import '../../stylesheets/variables';
 
 .content {
+    padding-bottom: 50px;
 
     &[data-observing='true'] {
         opacity: 0;
@@ -16,17 +17,13 @@
         height: 100%;
         width: 100%;
 
-        .text {
-            color: inherit;
-        }
-    }
+        .buttons {
+            text-align: center;
+            margin-bottom: 50px;
 
-
-    @media (max-width: @mobile-l-width) {
-        margin-bottom: 20px;
-
-        .inner {
-            margin-top: 6px;
+            a:not(:last-child) {
+                margin-right: 20px;
+            }
         }
     }
 }

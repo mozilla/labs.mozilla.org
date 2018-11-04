@@ -32,32 +32,42 @@ export default withStyles(styles)(
 
             return <div className={styles.content}>
                 <div className={styles.inner}>
-                    <div className={styles.text}>
-                        <p>footer</p>
+
+                    <div className={styles.logo}>
+                        <img src={url} alt={title}/>
                     </div>
 
-                    <img src={url} alt={title}/>
 
-                    <p>{copyright}</p>
+                    <div className={styles.wrap}>
+                        {linksBlock && linksBlock.length && linksBlock
+                            .filter(Boolean)
+                            .map(([Component, props], index) =>
+                                <Component key={props.id + index} {...props}/>
+                            )}
+                    </div>
 
 
-                    {links && links.length && links
-                        .filter(Boolean)
-                        .map(([Component, props], index) =>
-                            <Component key={props.id + index} {...props}/>
-                        )}
+                    <div className={styles.wrap2}>
+                        <div className={styles.text}>
+                            <p>{copyright}</p>
 
-                    {linksBlock && linksBlock.length && linksBlock
-                        .filter(Boolean)
-                        .map(([Component, props], index) =>
-                            <Component key={props.id + index} {...props}/>
-                        )}
+                        <div className={styles.links}>
+                            {links && links.length && links
+                                .filter(Boolean)
+                                .map(([Component, props], index) =>
+                                    <Component key={props.id + index} {...props}/>
+                                )}
+                        </div>
+                        </div>
 
-                    {buttonsBlock && buttonsBlock.length && buttonsBlock
-                        .filter(Boolean)
-                        .map(([Component, props], index) =>
-                            <Component key={props.id + index} {...props}/>
-                        )}
+                        <div className={styles.social}>
+                            {buttonsBlock && buttonsBlock.length && buttonsBlock
+                                .filter(Boolean)
+                                .map(([Component, props], index) =>
+                                    <Component key={props.id + index} {...props}/>
+                                )}
+                        </div>
+                    </div>
                 </div>
             </div>
         }

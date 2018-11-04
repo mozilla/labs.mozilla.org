@@ -29,12 +29,18 @@ export default withStyles(styles)(
             } = this.props;
 
             return <div className={styles.content}>
-                <div className={styles.inner}>
+                <div className={`${styles.inner} ${imagePosition ? styles.right : ''}`}>
                     <div className={styles.text}>
                         <h1>{title}</h1>
                         <p>{description}</p>
                         {Component && <Component {...props}/>}
-                        <img src={url} alt={imageTitle}/>
+                    </div>
+                    <div className={styles.media}>
+                        <img
+                            src={`${url}?w=${Math.ceil(width/2).toFixed()}`}
+                            srcSet={`${url} 2x`}
+                            alt={imageTitle}
+                        />
                     </div>
                 </div>
             </div>

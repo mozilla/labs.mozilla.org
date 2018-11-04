@@ -21,21 +21,19 @@ export default withStyles(styles)(
 
             return <div className={styles.content}>
                 <div className={styles.inner}>
-                    <div className={styles.text}>
-                        {imagesContentBlocks && imagesContentBlocks.length && imagesContentBlocks
-                            .filter(Boolean)
-                            .map(([Component, props], index) =>
-                                <Component key={props.id + index} {...props}/>
-                            )}
+                    {imagesContentBlocks && imagesContentBlocks.length && imagesContentBlocks
+                        .filter(Boolean)
+                        .map(([Component, props], index) =>
+                            <Component key={props.id + index} {...props}/>
+                        )}
 
-                            <div>
-                                {buttons && buttons.length && buttons
-                                    .filter(Boolean)
-                                    .map(([Component, props], index) =>
-                                        <Component key={props.id + index} {...props}/>
-                                    )}
-                            </div>
-                    </div>
+                        <div class={styles.buttons}>
+                            {buttons && buttons.length && buttons
+                                .filter(Boolean)
+                                .map(([Component, props], index) =>
+                                    <Component key={props.id + index} {...props}/>
+                                )}
+                        </div>
                 </div>
             </div>
         }

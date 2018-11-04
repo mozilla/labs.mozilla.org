@@ -1,7 +1,6 @@
 @import '../../stylesheets/variables';
 
 .content {
-
     &[data-observing='true'] {
         opacity: 0;
         transform: translate3d(0, 20px, 0);
@@ -15,9 +14,19 @@
     .inner {
         height: 100%;
         width: 100%;
+        max-width: 400px;
+        margin-bottom: 30px;
 
-        .text {
+        .media {
             color: inherit;
+        }
+
+        .text{
+            h1,
+            h3 {
+                color: #FFF;
+                margin: 20px 0 30px;
+            }
         }
     }
 

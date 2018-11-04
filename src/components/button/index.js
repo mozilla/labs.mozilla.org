@@ -32,7 +32,11 @@ export default withStyles(styles)(
                 href={url}
                 alt={title}
                 className={styles.button}
-            ><img src={imageUrl} alt={title}/></a>
+            >
+                {imageUrl ?
+                    <img src={imageUrl} alt={title}/> :
+                    <span>{title}</span>}
+            </a>
         }
     }
 )
