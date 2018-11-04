@@ -21,12 +21,12 @@ export default withStyles(styles)(
             } = this.props;
 
             return <div className={styles.content}>
-                <div className={styles.inner}>
-                    <div className={styles.text}>
-                        <h1>{title}</h1>
-                        <p>{description}</p>
-                    </div>
+                <div className={styles.text}>
+                    <h1>{title}</h1>
+                    <p>{description}</p>
+                </div>
 
+                <div className={styles.inner}>
                     {experiments && experiments.length && experiments
                         .filter(Boolean)
                         .map(([Component, props], index) =>

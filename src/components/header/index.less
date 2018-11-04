@@ -1,6 +1,11 @@
 @import '../../stylesheets/variables';
 
 .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
 
     &[data-observing='true'] {
         opacity: 0;
@@ -13,6 +18,7 @@
     }
 
     .inner {
+        .component-wrap;
         display: flex;
         align-items: center;
 
@@ -28,6 +34,8 @@
         .text {
             a {
                 margin-right: 20px ;
+                color: #FFF;
+                text-decoration: none;
             }
         }
     }
