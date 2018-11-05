@@ -25,6 +25,6 @@ deploy_development:
   image: registry.gitlab.com/ramotion/rancher-cli-k8s
   script:
     - rancher login "$RANCHER_SERVER_URL" -t "$RANCHER_API_TOKEN" --context "$RANCHER_API_CONTEXT"
-    - rancher kubectl --namespace=PROJECT patch deployment landing --type=strategic -p '{"spec":{"template":{"spec":{"containers":[{"name":"'landing'","image":"'$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA'"}]}}}}'
+    - rancher kubectl --namespace=mozilla-labs-development patch deployment landing --type=strategic -p '{"spec":{"template":{"spec":{"containers":[{"name":"'landing'","image":"'$CI_REGISTRY_IMAGE:$CI_COMMIT_SHA'"}]}}}}'
   only:
     - master
