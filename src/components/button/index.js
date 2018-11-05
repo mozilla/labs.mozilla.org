@@ -16,9 +16,10 @@ export default withStyles(styles)(
         render() {
             const {
                 title,
+                class: buttonClass,
+                size,
                 url,
                 image: {
-                    title: logoTitle = '',
                     url: imageUrl = '',
                     details: {
                         image: {
@@ -30,11 +31,16 @@ export default withStyles(styles)(
 
             return <a
                 href={url}
-                alt={title}
-                className={styles.button}
+                className={
+                    `${styles.button}
+                    ${buttonClass ? styles[buttonClass] : ''}
+                    ${size ? styles[size] : ''}`}
             >
                 {imageUrl ?
-                    <img src={imageUrl} alt={title}/> :
+                    <img
+                        src={`${imageUrl}?scale=fit&w=${Math.ceil(width/2).toFixed()}`}
+                        srcSet={`${imageUrl} 2x`}
+                        alt={title}/> :
                     <span>{title}</span>}
             </a>
         }

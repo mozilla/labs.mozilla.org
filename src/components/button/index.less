@@ -1,5 +1,101 @@
 @import '../../stylesheets/variables';
 
+@border-1: #61CCDD;
+@border-2: #FE448D;
+
 .button {
-    color: inherit;
+    align-items: center;
+    border-radius: 2px;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+
+    &.large,
+    &.small {
+        color: inherit;
+    }
+
+    &.primary,
+    &.secondary,
+    &.filled,
+    &.outline {
+        color: inherit;
+    }
+
+    &.large {
+        font-size: 16px;
+        font-weight: @bold;
+        height: 48px;
+        line-height: 48px;
+        min-width: 172px;
+        padding: 0 10px;
+    }
+
+    &.medium {
+        font-size: 16px;
+        font-weight: @bold;
+        height: 40px;
+        line-height: 40px;
+        min-width: 142px;
+        padding: 0 10px;
+    }
+
+    &.primary {
+        background-color: white;
+        //border: 2px solid black;
+        position: relative;
+
+        &:before,
+        &:after {
+            background-color: black;
+            border-radius: 2px;
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: all .15s linear;
+            z-index: -1;
+        }
+
+        &:before {
+            background-color: @border-1;
+            transform: translate(-4px, -4px);
+        }
+
+        &:after {
+            background-color: @border-2;
+            transform: translate(4px, 4px);
+        }
+
+        span {
+            color: black;
+        }
+    }
+
+    &.secondary {
+        background-color: white;
+        border: 2px solid black;
+        position: relative;
+
+        &:before {
+            background-color: black;
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: all .15s linear;
+            z-index: -1;
+        }
+
+        &:hover {
+            &:before {
+                transform: translate(4px, 4px);
+            }
+        }
+    }
 }

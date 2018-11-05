@@ -6,7 +6,8 @@ import styles from './index.less'
 export default withStyles(styles)(
     class extends Component {
         static defaultProps = {
-            onRef() {}
+            onRef() {
+            }
         };
 
         componentDidMount() {
@@ -27,13 +28,13 @@ export default withStyles(styles)(
                             <Component key={props.id + index} {...props}/>
                         )}
 
-                        <div class={styles.buttons}>
-                            {buttons && buttons.length && buttons
-                                .filter(Boolean)
-                                .map(([Component, props], index) =>
-                                    <Component key={props.id + index} {...props}/>
-                                )}
-                        </div>
+                    <div className={styles.buttons}>
+                        {buttons && buttons.length && buttons
+                            .filter(Boolean)
+                            .map(([Component, props], index) =>
+                                <Component key={props.id + index} {...props}/>
+                            )}
+                    </div>
                 </div>
             </div>
         }

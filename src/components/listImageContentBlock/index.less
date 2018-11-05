@@ -15,13 +15,17 @@
     padding-bottom: 70px;
 
     &[data-observing='true'] {
-        opacity: 0;
-        transform: translate3d(0, 20px, 0);
-        transition: .5s 1s;
+        .inner {
+            opacity: 0;
+            transform: translate3d(0, 20px, 0);
+            transition: .5s 1s;
+        }
     }
     &[data-intersection='true'] {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
+        .inner {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
     }
 
     .inner {

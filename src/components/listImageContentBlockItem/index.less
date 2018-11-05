@@ -1,24 +1,29 @@
 @import '../../stylesheets/variables';
 
 .content {
-    padding-top: 30px;
     padding-bottom: 30px;
+    padding-top: 30px;
 
     &[data-observing='true'] {
-        opacity: 0;
-        transform: translate3d(0, 20px, 0);
-        transition: .5s 1s;
+        .text,
+        .media {
+            opacity: 0;
+            transform: translate3d(0, 20px, 0);
+            transition: .5s 1s;
+        }
     }
     &[data-intersection='true'] {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
+        .text,
+        .media {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
     }
 
     .inner {
+        display: flex;
         height: 100%;
         width: 100%;
-
-        display: flex;
 
         .text,
         .media {

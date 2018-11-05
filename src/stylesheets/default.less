@@ -12,7 +12,6 @@
 
 html,
 body {
-    background-color: @color-bg;
     color: @color-heading;
     height: 100%;
 }
@@ -87,6 +86,14 @@ h4 {
 }
 li, p {
     .text-1;
+}
+
+[data-type='link'] {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 main {
