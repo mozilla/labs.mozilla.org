@@ -1,29 +1,32 @@
 @import '../../stylesheets/variables';
 
 .content {
-    background: no-repeat center;
+    background: black no-repeat center;
     color: #FFF;
 
     &[data-observing='true'] {
-        opacity: 0;
-        transform: translate3d(0, 20px, 0);
-        transition: .5s 1s;
+        .inner {
+            opacity: 0;
+            transform: translate3d(0, 20px, 0);
+            transition: .5s 1s;
+        }
     }
     &[data-intersection='true'] {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
+        .inner {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
     }
 
     .inner {
         .component-wrap;
         height: 100%;
+        padding-bottom: 200px;
+        padding-top: 100px;
         width: 100%;
 
-        padding-top: 100px;
-        padding-bottom: 200px;
-
         .text {
-            max-width: 50%;
+            max-width: 424px;
 
             h1 {
                 margin-bottom: 30px;
@@ -32,6 +35,12 @@
             p {
                 color: #FFF;
                 margin-bottom: 20px;
+            }
+
+            .btnWrap {
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
             }
 
             a {

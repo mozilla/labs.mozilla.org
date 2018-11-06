@@ -6,7 +6,8 @@ import styles from './index.less'
 export default withStyles(styles)(
     class extends Component {
         static defaultProps = {
-            onRef() {}
+            onRef() {
+            }
         };
 
         componentDidMount() {
@@ -28,20 +29,18 @@ export default withStyles(styles)(
                 } = {}
             } = this.props;
 
-            return <div className={styles.content}>
-                <div className={`${styles.inner} ${imagePosition ? styles.right : ''}`}>
-                    <div className={styles.text}>
-                        <h1>{title}</h1>
-                        <p>{description}</p>
-                        {Component && <Component {...props}/>}
-                    </div>
-                    <div className={styles.media}>
-                        <img
-                            src={`${url}?w=${Math.ceil(width/2).toFixed()}`}
-                            srcSet={`${url} 2x`}
-                            alt={imageTitle}
-                        />
-                    </div>
+            return <div className={`${styles.content} ${imagePosition ? styles.right : ''}`}>
+                <div className={styles.media}>
+                    <img
+                        src={`${url}?w=${Math.ceil(width / 2).toFixed()}`}
+                        srcSet={`${url} 2x`}
+                        alt={imageTitle}
+                    />
+                </div>
+                <div className={styles.text}>
+                    <h1>{title}</h1>
+                    <p>{description}</p>
+                    {Component && <Component {...props}/>}
                 </div>
             </div>
         }

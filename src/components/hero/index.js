@@ -40,11 +40,13 @@ export default withStyles(styles)(
                         <h1>{title}</h1>
                         <p>{description}</p>
 
-                        {buttons && buttons.length && buttons
-                            .filter(Boolean)
-                            .map(([Component, props], index) =>
-                                <Component key={props.id + index} {...props}/>
-                            )}
+                        <div className={styles.btnWrap}>
+                            {buttons && buttons.length && buttons
+                                .filter(Boolean)
+                                .map(([Component, props], index) =>
+                                    <Component key={props.id + index} {...props}/>
+                                )}
+                        </div>
                     </div>
                 </div>
             </div>

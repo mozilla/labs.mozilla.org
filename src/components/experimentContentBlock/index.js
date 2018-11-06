@@ -33,7 +33,6 @@ export default withStyles(styles)(
                     <div className={styles.text}>
                         <h3>{title}</h3>
                         <p>{description}</p>
-
                     </div>
                 </div>
             </div>

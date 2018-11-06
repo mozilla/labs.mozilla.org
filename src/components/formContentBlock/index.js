@@ -42,7 +42,9 @@ export default withStyles(styles)(
                             </label>
 
                             <div>
-                                <button>Sign up</button>
+                                <button type={'submit'}>
+                                    <span>Sign up</span>
+                                </button>
                             </div>
                         </div>
                     </div>

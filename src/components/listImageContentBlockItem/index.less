@@ -1,8 +1,8 @@
 @import '../../stylesheets/variables';
 
 .content {
-    padding-bottom: 30px;
-    padding-top: 30px;
+    padding-bottom: 25px;
+    padding-top: 25px;
 
     &[data-observing='true'] {
         .text,
@@ -21,25 +21,31 @@
     }
 
     .inner {
+        align-items: center;
+        border: 3px solid transparent;
+        border-radius: 5px;
         display: flex;
-        height: 100%;
-        width: 100%;
+        transition: all .15s ease-in-out;
 
-        .text,
-        .media {
-            color: inherit;
+        &:hover {
+            border-color: @color-white;
         }
 
         .text {
             margin-left: 50px;
+
+            h1, h2, h3, h4 {
+                margin-bottom: 14px;
+            }
         }
 
         .media {
+            flex: 1 0 auto;
             width: 250px;
 
             img {
-                max-width: 100%;
                 max-height: 100%;
+                max-width: 100%;
                 object-fit: contain;
             }
         }

@@ -15,6 +15,7 @@ export default withStyles(styles)(
 
         render() {
             const {
+                title: mainTitle = '',
                 description,
                 image: {
                     title,
@@ -29,16 +30,15 @@ export default withStyles(styles)(
                 <div className={styles.inner}>
                     <div className={styles.media}>
                         <img
-                            // src={`${url}?w=${Math.ceil(width/2).toFixed()}`}
-                            // srcSet={`${url} 2x`}
-                            src={url}
+                            src={`${url}?w=${Math.ceil(width/2).toFixed()}`}
+                            srcSet={`${url} 2x`}
                             alt={title}
                         />
                     </div>
 
                     <div className={styles.text}>
+                        <h4>{mainTitle}</h4>
                         <p>{description}</p>
-
                     </div>
                 </div>
             </div>
