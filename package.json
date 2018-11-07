@@ -50,6 +50,7 @@
         "react-dom": "^16.5.2",
         "react-redux": "^5.0.7",
         "sitemap": "^2.0.1",
+        "smoothscroll-polyfill": "^0.4.3",
         "source-map-support": "^0.5.9",
         "swiper": "^4.4.1",
         "transliteration": "^1.6.6",

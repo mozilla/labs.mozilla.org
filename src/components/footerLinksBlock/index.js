@@ -5,14 +5,6 @@ import styles from './index.less'
 
 export default withStyles(styles)(
     class extends Component {
-        static defaultProps = {
-            onRef() {}
-        };
-
-        componentDidMount() {
-            this.props.onRef(this);
-        }
-
         render() {
             const {
                 title,
@@ -20,7 +12,7 @@ export default withStyles(styles)(
             } = this.props;
 
             return <div className={styles.content}>
-                <h3>{title}</h3>
+                <h4>{title}</h4>
 
                 <div className={styles.inner}>
                     {links && links.length && links

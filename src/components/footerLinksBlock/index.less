@@ -1,35 +1,21 @@
 @import '../../stylesheets/variables';
 
 .content {
-
-    &[data-observing='true'] {
-        opacity: 0;
-        transform: translate3d(0, 20px, 0);
-        transition: .5s 1s;
+    h4,
+    a {
+        .text-2;
+        color: @color-white;
+        margin-bottom: 4px;
     }
-    &[data-intersection='true'] {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
+
+    h4 {
+        font-weight: @bold;
+        margin-bottom: 16px;
+        line-height: 1;
     }
 
     .inner {
-        height: 100%;
-        width: 100%;
-
         display: flex;
         flex-direction: column;
-
-        .text {
-            color: inherit;
-        }
-    }
-
-
-    @media (max-width: @mobile-l-width) {
-        margin-bottom: 20px;
-
-        .inner {
-            margin-top: 6px;
-        }
     }
 }

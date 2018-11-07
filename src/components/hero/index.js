@@ -5,6 +5,11 @@ import styles from './index.less'
 
 export default withStyles(styles)(
     class extends Component {
+        constructor(props) {
+            super(props);
+            this.hero = React.createRef();
+        }
+
         static defaultProps = {
             onRef() {}
         };
@@ -12,6 +17,19 @@ export default withStyles(styles)(
         componentDidMount() {
             this.props.onRef(this);
         }
+
+        scrollDown = () => {
+            if(process.env.BROWSER && this.hero && this.hero.current) {
+                const height = this.hero.current.offsetHeight;
+
+                if(Number(height)) {
+                    window.scrollTo({
+                        top: height,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        };
 
         render() {
             const {
@@ -35,6 +53,7 @@ export default withStyles(styles)(
             >
                 <div
                     className={styles.inner}
+                    ref={this.hero}
                 >
                     <div className={styles.text}>
                         <h1>{title}</h1>
@@ -49,6 +68,10 @@ export default withStyles(styles)(
                         </div>
                     </div>
                 </div>
+                <span
+                    className={styles.scrollDown}
+                    onClick={this.scrollDown}
+                />
             </div>
         }
     }

@@ -42,6 +42,10 @@ export default withStyles(styles)(
                 dispatch(desktopMenuVisibilityHandler(true));
 
                 if(process.env.BROWSER) {
+                    const smoothscroll  = await import('smoothscroll-polyfill');
+
+                    smoothscroll.polyfill();
+
                     await import('intersection-observer');
 
                     this.intersectionObserver = new IntersectionObserver((entries, observer) =>

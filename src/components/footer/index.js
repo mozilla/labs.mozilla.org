@@ -6,7 +6,8 @@ import styles from './index.less'
 export default withStyles(styles)(
     class extends Component {
         static defaultProps = {
-            onRef() {}
+            onRef() {
+            }
         };
 
         componentDidMount() {
@@ -51,21 +52,23 @@ export default withStyles(styles)(
                         <div className={styles.text}>
                             <p>{copyright}</p>
 
-                        <div className={styles.links}>
-                            {links && links.length && links
-                                .filter(Boolean)
-                                .map(([Component, props], index) =>
-                                    <Component key={props.id + index} {...props}/>
-                                )}
-                        </div>
+                            <div className={styles.links}>
+                                {links && links.length && links
+                                    .filter(Boolean)
+                                    .map(([Component, props], index) =>
+                                        <Component key={props.id + index} {...props}/>
+                                    )}
+                            </div>
                         </div>
 
                         <div className={styles.social}>
-                            {buttonsBlock && buttonsBlock.length && buttonsBlock
-                                .filter(Boolean)
-                                .map(([Component, props], index) =>
-                                    <Component key={props.id + index} {...props}/>
-                                )}
+                            <div>
+                                {buttonsBlock && buttonsBlock.length && buttonsBlock
+                                    .filter(Boolean)
+                                    .map(([Component, props], index) =>
+                                        <Component key={props.id + index} {...props}/>
+                                    )}
+                            </div>
                         </div>
                     </div>
                 </div>
