@@ -19,11 +19,13 @@
 
     .inner {
         .component-wrap;
-        display: flex;
         align-items: center;
+        display: flex;
 
         .logo {
+            display: flex;
             height: 56px;
+            justify-content: center;
             margin-right: 30px;
 
             img {
@@ -33,14 +35,14 @@
 
         .text {
             a {
-                margin-right: 20px ;
                 color: #FFF;
+                margin-right: 20px ;
                 text-decoration: none;
+
+                &:last-child {
+                    margin-right: 0;
+                }
             }
         }
-    }
-
-    @media (max-width: @mobile-l-width) {
-        margin-bottom: 20px
     }
 }
