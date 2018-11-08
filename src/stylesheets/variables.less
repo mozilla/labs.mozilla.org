@@ -167,10 +167,8 @@
         z-index: -1;
     }
 
-    &:hover {
-        &:before {
-            transform: translate(4px, 4px);
-        }
+    &:hover:before {
+        transform: translate(4px, 4px);
     }
 
     &.inverted {
@@ -178,8 +176,17 @@
         border: 2px solid @color-white;
         color: @color-white;
 
-        &:before {
+        span {
+            transition: all .1s linear;
+        }
+
+        &:hover {
             background-color: @color-white;
+            color: @color-black;
+
+            span {
+                color: @color-black;
+            }
         }
     }
 }
