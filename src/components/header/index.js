@@ -23,7 +23,7 @@ export default withStyles(styles)(
                 items
             } = this.props;
 
-            return <div className={
+            return <header className={
                 `${styles.content} ${theme ? styles.dark : ''}`
             }>
                 <div className={styles.inner}>
@@ -38,7 +38,7 @@ export default withStyles(styles)(
                             )}
                     </div>
                 </div>
-            </div>
+            </header>
         }
     }
 )

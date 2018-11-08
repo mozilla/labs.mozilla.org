@@ -31,7 +31,7 @@ export default withStyles(styles)(
                 } = {}
             } = this.props;
 
-            return <div className={styles.content}>
+            return <footer className={styles.content}>
                 <div className={styles.inner}>
 
                     <div className={styles.logo}>
@@ -72,7 +72,7 @@ export default withStyles(styles)(
                         </div>
                     </div>
                 </div>
-            </div>
+            </footer>
         }
     }
 )

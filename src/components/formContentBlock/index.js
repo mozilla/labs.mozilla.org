@@ -24,7 +24,7 @@ export default withStyles(styles)(
                 } = {}
             } = this.props;
 
-            return <div className={styles.content}>
+            return <section className={styles.content}>
                 <div className={styles.inner}>
                     <div className={styles.media}>
                         <img
@@ -49,7 +49,7 @@ export default withStyles(styles)(
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         }
     }
 )

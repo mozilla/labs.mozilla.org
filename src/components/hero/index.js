@@ -49,7 +49,7 @@ export default withStyles(styles)(
                 } = {}
             } = this.props;
 
-            return <div
+            return <section
                 className={styles.content}
                 style={{backgroundImage: `url(${url})`}}
                 ref={this.hero}
@@ -76,7 +76,7 @@ export default withStyles(styles)(
                     className={styles.scrollDown}
                     onClick={this.scrollDown}
                 />
-            </div>
+            </section>
         }
     }
 )

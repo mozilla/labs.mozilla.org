@@ -21,7 +21,7 @@ export default withStyles(styles)(
                 theme
             } = this.props;
 
-            return <div className={`${styles.content} ${theme && styles[theme]}`}>
+            return <section className={`${styles.content} ${theme && styles[theme]}`}>
                 <div className={styles.inner}>
                     {imagesContentBlocks && imagesContentBlocks.length && imagesContentBlocks
                         .filter(Boolean)
@@ -41,7 +41,7 @@ export default withStyles(styles)(
                             )}
                     </div>
                 </div>
-            </div>
+            </section>
         }
     }
 )

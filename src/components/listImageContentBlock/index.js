@@ -23,7 +23,7 @@ export default withStyles(styles)(
                 button: [Component, props] = []
             } = this.props;
 
-            return <div className={
+            return <section className={
                 `${styles.content}
                 ${inverted && styles.inverted}`
             }>
@@ -54,7 +54,7 @@ export default withStyles(styles)(
                         <Component inverted={inverted} {...props}/>
                     </div>}
                 </div>
-            </div>
+            </section>
         }
     }
 )
