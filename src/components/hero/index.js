@@ -21,10 +21,11 @@ export default withStyles(styles)(
         scrollDown = () => {
             if(process.env.BROWSER && this.hero && this.hero.current) {
                 const height = this.hero.current.offsetHeight;
+                const top = this.hero.current.parentElement.offsetTop;
 
-                if(Number(height)) {
+                if(Number(height) && top === 0 || Number(top)) {
                     window.scrollTo({
-                        top: height,
+                        top: top + height,
                         behavior: 'smooth'
                     });
                 }

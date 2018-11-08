@@ -1,8 +1,11 @@
 @import '../../stylesheets/variables';
 
 .content {
-    background: black no-repeat center;
+    background-color: @color-black;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #FFF;
+    position: relative;
 
     .scrollDown {
         display: none;
@@ -13,6 +16,7 @@
         height: 100%;
         padding-bottom: 200px;
         padding-top: 100px;
+        position: relative;
         width: 100%;
 
         .text {
@@ -42,6 +46,20 @@
         }
     }
 
+    .scrollDown {
+        background: url('/scroll-down.svg') no-repeat center;
+        bottom: 5vh;
+        content: '';
+        cursor: pointer;
+        display: block;
+        height: 48px;
+        left: 50%;
+        position: absolute;
+        right: 0;
+        transform: translateX(-50%);
+        width: 48px;
+    }
+
     &[data-observing='true'] {
         .inner {
             opacity: 0;
@@ -60,28 +78,12 @@
 main > div.content {
     &:first-child {
         height: 100vh;
-        position: relative;
 
         .inner {
             align-items: center;
             display: flex;
             padding-bottom: 0;
             padding-top: 0;
-            position: relative;
-        }
-
-        .scrollDown {
-            background: url('/scroll-down.svg') no-repeat center;
-            bottom: 5vh;
-            content: '';
-            cursor: pointer;
-            display: block;
-            height: 48px;
-            left: 50%;
-            position: absolute;
-            right: 0;
-            transform: translateX(-50%);
-            width: 48px;
         }
     }
 }
