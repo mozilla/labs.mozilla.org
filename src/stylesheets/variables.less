@@ -47,6 +47,9 @@
 @tablet-max-width: 900px;
 @desktop-max-width: 1280px;
 
+// theme
+@gray-bg: #FBFBFB;
+
 
 .display-1() {
     font-family: @SharpSans;
@@ -170,6 +173,14 @@
 
     &:hover:before {
         transform: translate(4px, 4px);
+    }
+
+    &.gray {
+        background-color: @gray-bg;
+    }
+
+    &.dark {
+        // TODO: inverted
     }
 
     &.inverted {

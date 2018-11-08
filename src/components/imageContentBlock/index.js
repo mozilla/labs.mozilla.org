@@ -20,6 +20,7 @@ export default withStyles(styles)(
                 description,
                 button: [Component, props] = [],
                 imagePosition,
+                theme,
                 image: {
                     title: imageTitle,
                     url,
@@ -29,7 +30,9 @@ export default withStyles(styles)(
                 } = {}
             } = this.props;
 
-            return <div className={`${styles.content} ${imagePosition ? styles.right : ''}`}>
+            return <div className={
+                `${styles.content}
+                 ${imagePosition ? styles.right : ''}`}>
                 <div className={styles.media}>
                     <img
                         src={`${url}?w=${Math.ceil(width / 2).toFixed()}`}
@@ -40,7 +43,7 @@ export default withStyles(styles)(
                 <div className={styles.text}>
                     <h1>{title}</h1>
                     <p>{description}</p>
-                    {Component && <Component {...props}/>}
+                    {Component && <Component theme={theme} {...props}/>}
                 </div>
             </div>
         }

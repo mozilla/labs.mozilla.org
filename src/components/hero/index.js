@@ -21,7 +21,7 @@ export default withStyles(styles)(
         scrollDown = () => {
             if(process.env.BROWSER && this.hero && this.hero.current) {
                 const height = this.hero.current.offsetHeight;
-                const top = this.hero.current.parentElement.offsetTop;
+                const top = this.hero.current.offsetTop;
 
                 if(Number(height) && top === 0 || Number(top)) {
                     window.scrollTo({
@@ -37,6 +37,7 @@ export default withStyles(styles)(
                 title,
                 buttons,
                 description,
+                textDarkBackground,
                 backgroundImage: {
                     title: backgroundImageTitle = '',
                     url,
@@ -51,14 +52,16 @@ export default withStyles(styles)(
             return <div
                 className={styles.content}
                 style={{backgroundImage: `url(${url})`}}
+                ref={this.hero}
             >
-                <div
-                    className={styles.inner}
-                    ref={this.hero}
-                >
-                    <div className={styles.text}>
+                <div className={styles.inner}>
+                    <div className={
+                        `${styles.text} ${textDarkBackground ? styles.darkText : ''}`
+                    }>
                         <h1>{title}</h1>
-                        <p>{description}</p>
+                        <div>
+                            <p>{description}</p>
+                        </div>
 
                         <div className={styles.btnWrap}>
                             {buttons && buttons.length && buttons

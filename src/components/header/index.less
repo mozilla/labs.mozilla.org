@@ -1,6 +1,7 @@
 @import '../../stylesheets/variables';
 
 .content {
+    background-color: @color-white;
     left: 0;
     position: absolute;
     right: 0;
@@ -17,16 +18,26 @@
         transform: translate3d(0, 0, 0);
     }
 
-    &:after {
-        background-image: linear-gradient(-180deg, #000 17%, rgba(0, 0, 0, 0) 89%);
-        content: '';
-        left: 0;
-        position: absolute;
-        height: 20vh;
-        right: 0;
-        top: 0;
-        width: 100%;
-        z-index: -1;
+    &.dark {
+        background-color: unset;
+
+        &:after {
+            background-image: linear-gradient(-180deg, #000 17%, rgba(0, 0, 0, 0) 89%);
+            content: '';
+            height: 30vh;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: -1;
+        }
+
+        .inner .text {
+            a {
+                color: @color-white;
+            }
+        }
     }
 
     .inner {
@@ -47,7 +58,6 @@
 
         .text {
             a {
-                color: #FFF;
                 margin-right: 30px;
                 text-decoration: none;
 

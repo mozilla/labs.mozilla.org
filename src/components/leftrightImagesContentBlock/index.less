@@ -2,6 +2,7 @@
 
 .content {
     padding-bottom: 50px;
+    padding-top: 50px;
 
     &[data-observing='true'] {
         opacity: 0;
@@ -13,13 +14,22 @@
         transform: translate3d(0, 0, 0);
     }
 
+    &.gray {
+        background-color: @gray-bg;
+    }
+
+    &.dark {
+        // TODO: inverted
+    }
+
     .inner {
         height: 100%;
         width: 100%;
 
         .buttons {
-            text-align: center;
             margin-bottom: 50px;
+            margin-top: 50px;
+            text-align: center;
 
             a:not(:last-child) {
                 margin-right: 20px;

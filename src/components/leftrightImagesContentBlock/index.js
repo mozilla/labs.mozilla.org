@@ -17,22 +17,27 @@ export default withStyles(styles)(
         render() {
             const {
                 buttons,
-                imagesContentBlocks
+                imagesContentBlocks,
+                theme
             } = this.props;
 
-            return <div className={styles.content}>
+            return <div className={`${styles.content} ${theme && styles[theme]}`}>
                 <div className={styles.inner}>
                     {imagesContentBlocks && imagesContentBlocks.length && imagesContentBlocks
                         .filter(Boolean)
                         .map(([Component, props], index) =>
-                            <Component key={props.id + index} {...props}/>
+                            <Component
+                                key={props.id + index}
+                                theme={theme}
+                                {...props}
+                            />
                         )}
 
                     <div className={styles.buttons}>
                         {buttons && buttons.length && buttons
                             .filter(Boolean)
                             .map(([Component, props], index) =>
-                                <Component key={props.id + index} {...props}/>
+                                <Component key={props.id + index}{...props}/>
                             )}
                     </div>
                 </div>

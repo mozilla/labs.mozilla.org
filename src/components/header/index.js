@@ -15,23 +15,21 @@ export default withStyles(styles)(
 
         render() {
             const {
+                theme,
                 logo: {
                     url,
                     title,
-                    details: {
-                        image: {
-                            width
-                        } = {}
-                    } = {}
                 } = {},
                 items
             } = this.props;
 
-            return <div className={styles.content}>
+            return <div className={
+                `${styles.content} ${theme ? styles.dark : ''}`
+            }>
                 <div className={styles.inner}>
-                    <div className={styles.logo}>
+                    <a href="/" className={styles.logo}>
                         <img src={url} alt={title}/>
-                    </div>
+                    </a>
 
                     <div className={styles.text}>
                         {items && items.length && items

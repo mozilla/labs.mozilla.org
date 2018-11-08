@@ -19,6 +19,7 @@ export default withStyles(styles)(
                 class: buttonClass,
                 size,
                 url,
+                theme,
                 inverted,
                 image: {
                     url: imageUrl = '',
@@ -36,7 +37,8 @@ export default withStyles(styles)(
                     `${styles.button}
                     ${buttonClass ? styles[buttonClass] : ''}
                     ${size ? styles[size] : ''}
-                    ${inverted ? styles.inverted : ''}`
+                    ${inverted ? styles.inverted : ''}
+                    ${theme ? styles[theme] : ''}`
                 }
             >
                 {imageUrl ?
