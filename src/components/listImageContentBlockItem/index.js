@@ -17,6 +17,8 @@ export default withStyles(styles)(
             const {
                 title: mainTitle = '',
                 description,
+                link,
+                inverted,
                 image: {
                     title,
                     url,
@@ -26,8 +28,8 @@ export default withStyles(styles)(
                 } = {}
             } = this.props;
 
-            return <div className={styles.content}>
-                <div className={styles.inner}>
+            return <div className={`${styles.content} ${inverted && styles.inverted}`}>
+                <a href={link && link} className={styles.inner}>
                     <div className={styles.media}>
                         <img
                             src={`${url}?w=${Math.ceil(width/2).toFixed()}`}
@@ -40,7 +42,7 @@ export default withStyles(styles)(
                         <h4>{mainTitle}</h4>
                         <p>{description}</p>
                     </div>
-                </div>
+                </a>
             </div>
         }
     }

@@ -25,17 +25,18 @@
         border: 3px solid transparent;
         border-radius: 5px;
         display: flex;
+        text-decoration: none;
         transition: all .15s ease-in-out;
-
-        &:hover {
-            border-color: @color-white;
-        }
 
         .text {
             margin-left: 50px;
 
-            h1, h2, h3, h4 {
+            h4 {
                 margin-bottom: 14px;
+            }
+
+            h4, p {
+                text-decoration: none;
             }
         }
 
@@ -49,5 +50,19 @@
                 object-fit: contain;
             }
         }
+
+        &:hover {
+            border-color: @color-black;
+
+            .text {
+                h4 {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &.inverted .inner:hover {
+        border-color: @color-white;
     }
 }

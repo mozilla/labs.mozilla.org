@@ -1,17 +1,8 @@
 @import '../../stylesheets/variables';
 
 .content {
-    background-color: black;
     padding-bottom: 50px;
     padding-top: 100px;
-
-    p,
-    h1,
-    h2,
-    h3,
-    h4 {
-        color: #FFF;
-    }
 
     &[data-observing='true'] {
         .inner {
@@ -27,31 +18,35 @@
         }
     }
 
+    &.inverted {
+        background-color: black;
+
+        p,
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: #FFF;
+        }
+    }
+
     .inner {
         .component-wrap;
         height: 100%;
         width: 100%;
 
         .text {
-            color: inherit;
-            padding-bottom: 40px;
+            margin-bottom: 75px;
 
             > h1 {
                 margin-bottom: 40px;
             }
-
-            > p {
-                margin-bottom: 100px;
-            }
         }
-    }
 
-
-    @media (max-width: @mobile-l-width) {
-        margin-bottom: 20px;
-
-        .inner {
-            margin-top: 6px;
+        .more {
+            margin-bottom: 100px;
+            margin-top: 75px;
+            text-align: center;
         }
     }
 }

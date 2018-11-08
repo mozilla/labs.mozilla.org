@@ -17,21 +17,35 @@ export default withStyles(styles)(
             const {
                 title,
                 description,
-                listImageItems
+                inverted,
+                listImageItems,
+                button: [Component, props] = []
             } = this.props;
 
-            return <div className={styles.content}>
+            return <div className={`${styles.content} ${inverted && styles.inverted}`}>
                 <div className={styles.inner}>
                     <div className={styles.text}>
                         <h1>{title}</h1>
                         <p>{description}</p>
+                    </div>
 
-                        {listImageItems && listImageItems.length && listImageItems
+                    {
+                        listImageItems &&
+                        listImageItems.length &&
+                        listImageItems
                             .filter(Boolean)
                             .map(([Component, props], index) =>
-                                <Component key={props.id + index} {...props}/>
-                            )}
-                    </div>
+                                <Component
+                                    key={props.id + index}
+                                    inverted={inverted}
+                                    {...props}
+                                />
+                            )
+                    }
+
+                    {Component && <div className={styles.more}>
+                        <Component inverted={inverted} {...props}/>
+                    </div>}
                 </div>
             </div>
         }
