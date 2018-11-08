@@ -19,6 +19,7 @@ export default withStyles(styles)(
                 description,
                 link,
                 inverted,
+                grid,
                 image: {
                     title,
                     url,
@@ -28,7 +29,11 @@ export default withStyles(styles)(
                 } = {}
             } = this.props;
 
-            return <div className={`${styles.content} ${inverted && styles.inverted}`}>
+            return <div className={
+                `${styles.content}
+                ${inverted && styles.inverted}
+                ${grid ? styles.vertical : ''}`
+            }>
                 <a href={link && link} className={styles.inner}>
                     <div className={styles.media}>
                         <img

@@ -18,30 +18,37 @@ export default withStyles(styles)(
                 title,
                 description,
                 inverted,
+                gridDirection,
                 listImageItems,
                 button: [Component, props] = []
             } = this.props;
 
-            return <div className={`${styles.content} ${inverted && styles.inverted}`}>
+            return <div className={
+                `${styles.content}
+                ${inverted && styles.inverted}`
+            }>
                 <div className={styles.inner}>
                     <div className={styles.text}>
                         <h1>{title}</h1>
                         <p>{description}</p>
                     </div>
 
-                    {
-                        listImageItems &&
-                        listImageItems.length &&
-                        listImageItems
-                            .filter(Boolean)
-                            .map(([Component, props], index) =>
-                                <Component
-                                    key={props.id + index}
-                                    inverted={inverted}
-                                    {...props}
-                                />
-                            )
-                    }
+                    <div className={gridDirection ? styles.row : ''}>
+                        {
+                            listImageItems &&
+                            listImageItems.length &&
+                            listImageItems
+                                .filter(Boolean)
+                                .map(([Component, props], index) =>
+                                    <Component
+                                        key={props.id + index}
+                                        inverted={inverted}
+                                        grid={gridDirection}
+                                        {...props}
+                                    />
+                                )
+                        }
+                    </div>
 
                     {Component && <div className={styles.more}>
                         <Component inverted={inverted} {...props}/>

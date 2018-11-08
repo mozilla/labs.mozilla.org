@@ -42,7 +42,7 @@
 
         .media {
             flex: 1 0 auto;
-            width: 250px;
+            max-width: 250px;
 
             img {
                 max-height: 100%;
@@ -64,5 +64,16 @@
 
     &.inverted .inner:hover {
         border-color: @color-white;
+    }
+
+    &.vertical {
+        .inner {
+            flex-direction: column;
+            max-width: 250px;
+
+            .text {
+                margin: 35px 8px 8px;
+            }
+        }
     }
 }
