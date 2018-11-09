@@ -6,7 +6,8 @@ import styles from './index.less'
 export default withStyles(styles)(
     class extends Component {
         static defaultProps = {
-            onRef() {}
+            onRef() {
+            }
         };
 
         componentDidMount() {
@@ -17,15 +18,17 @@ export default withStyles(styles)(
             const {
                 title,
                 description,
-                inverted,
-                gridDirection,
+                theme,
+                numberOfColumns,
                 listImageItems,
                 button: [Component, props] = []
             } = this.props;
 
+            const grid = numberOfColumns === 3 ? 'three' : numberOfColumns === 2 ? 'two' : '';
+
             return <section className={
                 `${styles.content}
-                ${inverted && styles.inverted}`
+                ${theme && styles[theme]}`
             }>
                 <div className={styles.inner}>
                     <div className={styles.text}>
@@ -33,7 +36,7 @@ export default withStyles(styles)(
                         <p>{description}</p>
                     </div>
 
-                    <div className={gridDirection ? styles.row : ''}>
+                    <div className={grid && styles[grid]}>
                         {
                             listImageItems &&
                             listImageItems.length &&
@@ -42,8 +45,8 @@ export default withStyles(styles)(
                                 .map(([Component, props], index) =>
                                     <Component
                                         key={props.id + index}
-                                        inverted={inverted}
-                                        grid={gridDirection}
+                                        theme={theme}
+                                        grid={grid}
                                         {...props}
                                     />
                                 )
@@ -51,7 +54,7 @@ export default withStyles(styles)(
                     </div>
 
                     {Component && <div className={styles.more}>
-                        <Component inverted={inverted} {...props}/>
+                        <Component inverted={theme === 'dark'} {...props}/>
                     </div>}
                 </div>
             </section>

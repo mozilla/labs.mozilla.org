@@ -18,7 +18,7 @@
         }
     }
 
-    &.inverted {
+    &.dark {
         background-color: black;
 
         p,
@@ -44,10 +44,14 @@
             }
         }
 
-        .row {
+        .two,
+        .three {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: space-between;
+            margin-left: -@gutter;
+            margin-right: -@gutter;
         }
 
         .more {

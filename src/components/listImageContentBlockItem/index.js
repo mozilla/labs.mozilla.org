@@ -18,7 +18,7 @@ export default withStyles(styles)(
                 title: mainTitle = '',
                 description,
                 link,
-                inverted,
+                theme,
                 grid,
                 image: {
                     title,
@@ -31,8 +31,8 @@ export default withStyles(styles)(
 
             return <div className={
                 `${styles.content}
-                ${inverted && styles.inverted}
-                ${grid ? styles.vertical : ''}`
+                ${theme ? styles[theme] : ''}
+                ${grid && styles[grid]}`
             }>
                 <a href={link && link} className={styles.inner}>
                     <div className={styles.media}>
