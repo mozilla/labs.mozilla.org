@@ -180,7 +180,20 @@
     }
 
     &.dark {
-        // TODO: inverted
+        background-color: @color-white;
+        border: 2px solid @color-white;
+
+        span {
+            color: @color-black;
+        }
+
+        &:hover {
+            background-color: @color-black;
+
+            span {
+                color: @color-white;
+            }
+        }
     }
 
     &.inverted {

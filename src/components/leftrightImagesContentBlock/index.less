@@ -19,12 +19,17 @@
     }
 
     &.dark {
-        // TODO: inverted
+        background-color: @color-black;
+        color: @color-white;
     }
 
     .inner {
         height: 100%;
         width: 100%;
+
+        p {
+            color: inherit;
+        }
 
         .buttons {
             margin-bottom: 50px;

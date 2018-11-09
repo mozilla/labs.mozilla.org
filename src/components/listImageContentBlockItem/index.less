@@ -43,7 +43,7 @@
         .media {
             flex: 1 0 auto;
             max-height: 320px;
-            max-width: 100%;
+            max-width: 288px;
             overflow: hidden;
 
             img {
@@ -74,16 +74,18 @@
             flex-direction: column;
             max-width: 250px;
 
+            .media {
+                max-width: 100%;
+            }
+
             .text {
                 margin: 35px 8px 8px;
             }
         }
     }
 
-    &.two {
-        .inner {
-            max-width: 440px;
-        }
+    &.two .inner {
+        max-width: 440px;
     }
 
     &.dark .inner:hover {

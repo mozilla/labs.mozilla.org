@@ -37,7 +37,11 @@ export default withStyles(styles)(
                         {buttons && buttons.length && buttons
                             .filter(Boolean)
                             .map(([Component, props], index) =>
-                                <Component key={props.id + index}{...props}/>
+                                <Component
+                                    key={props.id + index}
+                                    theme={theme}
+                                    {...props}
+                                />
                             )}
                     </div>
                 </div>
