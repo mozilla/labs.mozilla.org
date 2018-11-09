@@ -42,17 +42,25 @@
                 margin-bottom: 20px;
             }
 
-            .btnWrap {
-                align-items: center;
-                display: flex;
-                margin-top: 47px;
-                justify-content: space-between;
-            }
-
             a {
                 color: #FFF;
                 font-weight: @bold;
                 margin-right: 10px;
+            }
+        }
+
+        .btnWrap {
+            align-items: center;
+            display: flex;
+            margin-top: 47px;
+            justify-content: space-between;
+
+            > a {
+                padding: 0 32px;
+
+                &:not(:last-child) {
+                    margin-right: 46px;
+                }
             }
         }
     }

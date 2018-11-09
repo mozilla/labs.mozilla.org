@@ -55,12 +55,14 @@ export default withStyles(styles)(
                 ref={this.hero}
             >
                 <div className={styles.inner}>
-                    <div className={
-                        `${styles.text} ${textDarkBackground ? styles.darkText : ''}`
-                    }>
-                        <h1>{title}</h1>
-                        <div>
-                            <p>{description}</p>
+                    <div>
+                        <div className={
+                            `${styles.text} ${textDarkBackground ? styles.darkText : ''}`
+                        }>
+                            <h1>{title}</h1>
+                            <div>
+                                <p>{description}</p>
+                            </div>
                         </div>
 
                         <div className={styles.btnWrap}>
