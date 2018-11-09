@@ -6,8 +6,7 @@ import styles from './index.less'
 export default withStyles(styles)(
     class extends Component {
         static defaultProps = {
-            onRef() {
-            }
+            onRef() {}
         };
 
         componentDidMount() {
@@ -28,7 +27,7 @@ export default withStyles(styles)(
 
             return <section className={
                 `${styles.content}
-                ${theme && styles[theme]}`
+                ${theme ? styles[theme] : ''}`
             }>
                 <div className={styles.inner}>
                     <div className={styles.text}>

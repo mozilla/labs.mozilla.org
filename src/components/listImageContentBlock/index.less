@@ -5,17 +5,11 @@
     padding-top: 100px;
 
     &[data-observing='true'] {
-        .inner {
-            opacity: 0;
-            transform: translate3d(0, 20px, 0);
-            transition: .5s 1s;
-        }
+        .observing;
     }
+
     &[data-intersection='true'] {
-        .inner {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
+        .intersection;
     }
 
     &.dark {
@@ -51,8 +45,7 @@
         .two,
         .three {
             display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+            flex-flow: row wrap;
             justify-content: space-between;
             margin-left: -@gutter;
             margin-right: -@gutter;

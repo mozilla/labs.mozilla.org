@@ -4,22 +4,6 @@
     padding-bottom: 25px;
     padding-top: 25px;
 
-    &[data-observing='true'] {
-        .text,
-        .media {
-            opacity: 0;
-            transform: translate3d(0, 20px, 0);
-            transition: .5s 1s;
-        }
-    }
-    &[data-intersection='true'] {
-        .text,
-        .media {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-        }
-    }
-
     .inner {
         align-items: center;
         border: 3px solid transparent;

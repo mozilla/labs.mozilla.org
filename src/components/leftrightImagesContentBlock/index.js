@@ -6,8 +6,7 @@ import styles from './index.less'
 export default withStyles(styles)(
     class extends Component {
         static defaultProps = {
-            onRef() {
-            }
+            onRef() {}
         };
 
         componentDidMount() {

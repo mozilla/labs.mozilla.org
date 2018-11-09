@@ -14,8 +14,6 @@ export default withStyles(styles)(
         }
 
         render() {
-            console.log('123', this.props);
-
             const {
                 title,
                 description,

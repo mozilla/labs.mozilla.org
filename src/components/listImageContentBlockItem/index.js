@@ -5,14 +5,6 @@ import styles from './index.less'
 
 export default withStyles(styles)(
     class extends Component {
-        static defaultProps = {
-            onRef() {}
-        };
-
-        componentDidMount() {
-            this.props.onRef(this);
-        }
-
         render() {
             const {
                 title: mainTitle = '',

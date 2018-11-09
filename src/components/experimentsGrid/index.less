@@ -8,16 +8,13 @@
     &[data-observing='true'] {
         .text,
         .inner {
-            opacity: 0;
-            transform: translate3d(0, 20px, 0);
-            transition: .5s 1s;
+            .observing;
         }
     }
     &[data-intersection='true'] {
         .text,
         .inner {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
+            .intersection;
         }
     }
 
