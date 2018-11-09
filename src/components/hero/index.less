@@ -52,6 +52,11 @@
             > a {
                 padding: 0 32px;
 
+                &[data-type='link'] {
+                    color: inherit;
+                    font-weight: @bold;
+                }
+
                 &:not(:last-child) {
                     margin-right: 46px;
                 }

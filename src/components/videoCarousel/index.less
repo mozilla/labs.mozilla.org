@@ -1,0 +1,35 @@
+@import '../../stylesheets/variables';
+
+.content {
+    &[data-observing='true'] {
+        .inner {
+            opacity: 0;
+            transform: translate3d(0, 20px, 0);
+            transition: .5s 1s;
+        }
+    }
+    &[data-intersection='true'] {
+        .inner {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .inner {
+        .component-wrap;
+        padding-bottom: 100px;
+        padding-top: 100px;
+
+        .text {
+            margin-bottom: 100px;
+
+            h1 {
+                margin-bottom: 30px;
+            }
+
+            p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}

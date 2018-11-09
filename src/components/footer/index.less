@@ -69,9 +69,21 @@
         }
 
         .social {
+            align-items: flex-end;
+            display: flex;
+            justify-content: flex-end;
+            flex: 1;
+
             a {
+                height: 48px;
+                width: 48px;
+
+                &:not(:last-child) {
+                    margin-right: 24px;
+                }
+
                 img {
-                    max-width: 40px;
+                    max-width: 16px;
                 }
             }
         }
