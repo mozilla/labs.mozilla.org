@@ -36,7 +36,7 @@ export default withStyles(styles)(
                     </div>
 
                     <div className={styles.text}>
-                        <h4>{mainTitle}</h4>
+                        <h5>{mainTitle}</h5>
                         <p>{description}</p>
                     </div>
                 </a>

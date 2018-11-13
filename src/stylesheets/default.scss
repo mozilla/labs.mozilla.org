@@ -6,6 +6,23 @@
 
 @import '../../node_modules/@mozilla-protocol/core/protocol/css/base/elements/typography';
 
+h1, h2, h3, h4 {
+    font-family: "Sharp Sans", "Open Sans", X-LocaleSpecific, sans-serif
+}
+
+a {
+    color: $color-black;
+    transition: all .1s ease-in-out;
+
+    &:hover {
+        color: $color-black;
+    }
+
+    &:active {
+        color: $color-black;
+    }
+}
+
 [id='app'] {
     display: flex;
     flex-direction: column;

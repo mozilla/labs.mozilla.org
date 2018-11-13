@@ -40,7 +40,7 @@ export default withStyles(styles)(
                     />
                 </div>
                 <div className={styles.text}>
-                    <h1>{title}</h1>
+                    <h3>{title}</h3>
                     <p>{description}</p>
                     {Component && <Component theme={theme} {...props}/>}
                 </div>

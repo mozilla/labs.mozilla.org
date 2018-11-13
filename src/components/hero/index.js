@@ -7,7 +7,6 @@ export default withStyles(styles)(
     class extends Component {
         constructor(props) {
             super(props);
-            this.hero = React.createRef();
         }
 
         static defaultProps = {
@@ -17,20 +16,6 @@ export default withStyles(styles)(
         componentDidMount() {
             this.props.onRef(this);
         }
-
-        scrollDown = () => {
-            if(process.env.BROWSER && this.hero && this.hero.current) {
-                const height = this.hero.current.offsetHeight;
-                const top = this.hero.current.offsetTop;
-
-                if(Number(height) && top === 0 || Number(top)) {
-                    window.scrollTo({
-                        top: top + height,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        };
 
         render() {
             const {
@@ -52,14 +37,13 @@ export default withStyles(styles)(
             return <section
                 className={styles.content}
                 style={{backgroundImage: `url(${url})`}}
-                ref={this.hero}
             >
                 <div className={styles.inner}>
                     <div>
                         <div className={
                             `${styles.text} ${textDarkBackground ? styles.darkText : ''}`
                         }>
-                            <h1>{title}</h1>
+                            <h2>{title}</h2>
                             <div>
                                 <p>{description}</p>
                             </div>
@@ -74,10 +58,6 @@ export default withStyles(styles)(
                         </div>
                     </div>
                 </div>
-                <span
-                    className={styles.scrollDown}
-                    onClick={this.scrollDown}
-                />
             </section>
         }
     }

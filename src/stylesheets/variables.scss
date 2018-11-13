@@ -1,10 +1,60 @@
-//@import '../fonts/SharpSansFont.scss';
+@font-face {
+    font-family: 'Sharp Sans';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../../fonts/SharpSans/SharpSans-Extrabold.woff2') format('woff2'),
+    url('../../fonts/SharpSans/SharpSans-Extrabold.woff') format('woff');
+}
 
-//@SharpSans: 'Sharp Sans', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+@font-face {
+    font-family: 'Sharp Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../../fonts/SharpSans/SharpSans-Bold.woff2') format('woff2'),
+    url('../../fonts/SharpSans/SharpSans-Bold.woff') format('woff');
+}
 
-//.font-1 {
-//    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-//}
+@font-face {
+    font-family: 'Sharp Sans';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../../fonts/SharpSans/SharpSans-Semibold.woff2') format('woff2'),
+    url('../../fonts/SharpSans/SharpSans-Semibold.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Sharp Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../../fonts/SharpSans/SharpSans-Medium.woff2') format('woff2'),
+    url('../../fonts/SharpSans/SharpSans-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Sharp Sans';
+    font-style: italic;
+    font-weight: normal;
+    src: url('../../fonts/SharpSans/SharpSans-BookItalic.woff2') format('woff2'),
+    url('../../fonts/SharpSans/SharpSans-BookItalic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Sharp Sans';
+    font-weight: normal;
+    font-style: normal;
+    src: url('../../fonts/SharpSans/SharpSans-Book.woff2') format('woff2'),
+    url('../../fonts/SharpSans/SharpSans-Book.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Sharp Sans';
+    font-weight: 200;
+    font-style: normal;
+    src: url('../../fonts/SharpSans/SharpSans-Thin.woff2') format('woff2'),
+    url('../../fonts/SharpSans/SharpSans-Thin.woff') format('woff');
+}
+
 
 $thin: 100;
 $extra-light: 200;

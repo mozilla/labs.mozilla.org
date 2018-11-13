@@ -10,15 +10,15 @@
         @extend %component-wrap;
         height: 100%;
         padding-bottom: 200px;
-        padding-top: 100px;
+        padding-top: 200px;
         position: relative;
         width: 100%;
 
         .text {
             max-width: 424px;
 
-            h1 {
-                margin-bottom: 34px;
+            > div {
+                margin-top: 34px;
             }
 
             p {
@@ -33,12 +33,12 @@
             }
 
             &.darkText {
-                h1, p {
+                h2, p {
                     background-color: $color-black;
                     box-shadow: 10px 0 0 $color-black, -10px 0 0 $color-black;
                     color: $color-white;
                     display: inline;
-                    line-height: 1.5;
+                    line-height: 1.4;
                 }
             }
         }
@@ -64,20 +64,6 @@
         }
     }
 
-    .scrollDown {
-        background: url('/scroll-down.svg') no-repeat center;
-        bottom: 5vh;
-        content: '';
-        cursor: pointer;
-        display: block;
-        height: 48px;
-        left: 50%;
-        position: absolute;
-        right: 0;
-        transform: translateX(-50%);
-        width: 48px;
-    }
-
     &[data-observing='true'] {
         .inner {
             @extend %observing;
@@ -91,12 +77,12 @@
 }
 
 main > section.content {
-    padding-top: 56px;
+    //padding-top: 56px;
 
     &:first-child {
         align-items: center;
         display: flex;
-        min-height: 100vh;
+        //min-height: 100vh;
 
         .inner {
             align-items: center;

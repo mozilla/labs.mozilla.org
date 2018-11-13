@@ -61,7 +61,7 @@ export default withStyles(styles)(
             return <div className={styles.content}>
                 <div className={styles.inner}>
                     <div className={styles.text}>
-                        <h1>{title}</h1>
+                        <h2>{title}</h2>
                         <p>{description}</p>
                     </div>
 
