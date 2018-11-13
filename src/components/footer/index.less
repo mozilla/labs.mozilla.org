@@ -50,11 +50,31 @@
         display: flex;
         padding-top: 30px;
 
+        .social {
+            align-items: flex-end;
+            display: flex;
+            flex: 1;
+            justify-content: flex-end;
+
+            a {
+                height: 48px;
+                width: 48px;
+
+                &:not(:last-child) {
+                    margin-right: 8px;
+                }
+
+                img {
+                    max-width: 16px;
+                }
+            }
+        }
+
         .text {
             > p {
                 .text-3;
-                max-width: 450px;
                 margin-bottom: 26px;
+                max-width: 450px;
             }
 
             .links a {
@@ -64,26 +84,6 @@
 
                 &:hover {
                     text-decoration: none;
-                }
-            }
-        }
-
-        .social {
-            align-items: flex-end;
-            display: flex;
-            justify-content: flex-end;
-            flex: 1;
-
-            a {
-                height: 48px;
-                width: 48px;
-
-                &:not(:last-child) {
-                    margin-right: 24px;
-                }
-
-                img {
-                    max-width: 16px;
                 }
             }
         }

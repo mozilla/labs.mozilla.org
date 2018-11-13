@@ -3,7 +3,7 @@
 .content {
     background: @color-black no-repeat center;
     background-size: cover;
-    color: #FFF;
+    color: @color-white;
     position: relative;
 
     .inner {
@@ -94,13 +94,13 @@ main > section.content {
     padding-top: 56px;
 
     &:first-child {
-        height: 100vh;
+        align-items: center;
+        display: flex;
+        min-height: 100vh;
 
         .inner {
             align-items: center;
             display: flex;
-            padding-bottom: 0;
-            padding-top: 0;
         }
     }
 }
