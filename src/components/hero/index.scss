@@ -1,13 +1,13 @@
 @import '../../stylesheets/variables';
 
 .content {
-    background: @color-black no-repeat center;
+    background: $color-black no-repeat center;
     background-size: cover;
-    color: @color-white;
+    color: $color-white;
     position: relative;
 
     .inner {
-        .component-wrap;
+        @extend %component-wrap;
         height: 100%;
         padding-bottom: 200px;
         padding-top: 100px;
@@ -28,15 +28,15 @@
 
             a {
                 color: #FFF;
-                font-weight: @bold;
+                font-weight: $bold;
                 margin-right: 10px;
             }
 
             &.darkText {
                 h1, p {
-                    background-color: @color-black;
-                    box-shadow: 10px 0 0 @color-black, -10px 0 0 @color-black;
-                    color: @color-white;
+                    background-color: $color-black;
+                    box-shadow: 10px 0 0 $color-black, -10px 0 0 $color-black;
+                    color: $color-white;
                     display: inline;
                     line-height: 1.5;
                 }
@@ -54,7 +54,7 @@
 
                 &[data-type='link'] {
                     color: inherit;
-                    font-weight: @bold;
+                    font-weight: $bold;
                 }
 
                 &:not(:last-child) {
@@ -80,12 +80,12 @@
 
     &[data-observing='true'] {
         .inner {
-            .observing;
+            @extend %observing;
         }
     }
     &[data-intersection='true'] {
         .inner {
-            .intersection;
+            @extend %intersection;
         }
     }
 }

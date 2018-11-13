@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
 
-import styles from './index.less'
+import styles from './index.scss'
 
 export default withStyles(styles)(
     class extends Component {

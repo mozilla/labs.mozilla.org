@@ -11,7 +11,7 @@ import {
     //scrollingHandler
 } from '../../utils/store'
 
-import styles from './index.less'
+import styles from './index.scss'
 
 
 export default withStyles(styles)(

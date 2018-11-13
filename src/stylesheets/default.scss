@@ -1,0 +1,29 @@
+//@import './variables';
+
+@import '../../node_modules/@mozilla-protocol/core/protocol/css/base/elements/reset';
+
+@import '../../node_modules/@mozilla-protocol/core/protocol/css/base/elements/document';
+
+@import '../../node_modules/@mozilla-protocol/core/protocol/css/base/elements/typography';
+
+[id='app'] {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    > div {
+        height: 100%;
+    }
+}
+
+[data-type='link'] {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+main {
+    display: block;
+}

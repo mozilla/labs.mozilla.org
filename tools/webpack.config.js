@@ -170,13 +170,19 @@ const config = {
                     },
 
                     // Compile Less to CSS
+                    // {
+                    //     test: /\.less$/,
+                    //     loader: 'less-loader',
+                    //     options: {
+                    //         sourceMap: isDebug
+                    //     }
+                    // },
+
+                    // Compile Sass to CSS
                     {
-                        test: /\.less$/,
-                        loader: 'less-loader',
-                        options: {
-                            sourceMap: isDebug
-                        }
-                    }
+                        test: /\.(scss|sass)$/,
+                        loader: 'sass-loader'
+                    },
                 ]
             },
 

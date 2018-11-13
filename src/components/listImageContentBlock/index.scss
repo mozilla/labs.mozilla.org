@@ -5,11 +5,11 @@
     padding-top: 100px;
 
     &[data-observing='true'] {
-        .observing;
+        @extend %observing;
     }
 
     &[data-intersection='true'] {
-        .intersection;
+        @extend %intersection;
     }
 
     &.dark {
@@ -20,16 +20,16 @@
         h2,
         h3,
         h4 {
-            color: #FFF;
+            color: $color-white;
         }
     }
 
     &.gray {
-        background-color: @gray-bg;
+        background-color: $gray-bg;
     }
 
     .inner {
-        .component-wrap;
+        @extend %component-wrap;
         height: 100%;
         width: 100%;
 
@@ -47,8 +47,8 @@
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
-            margin-left: -@gutter;
-            margin-right: -@gutter;
+            margin-left: -$gutter;
+            margin-right: -$gutter;
         }
 
         .more {

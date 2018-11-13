@@ -5,19 +5,19 @@
     padding-top: 50px;
 
     &[data-observing='true'] {
-        .observing;
+        @extend %observing;
     }
     &[data-intersection='true'] {
-        .intersection;
+        @extend %intersection;
     }
 
     &.gray {
-        background-color: @gray-bg;
+        background-color: $gray-bg;
     }
 
     &.dark {
-        background-color: @color-black;
-        color: @color-white;
+        background-color: $color-black;
+        color: $color-white;
     }
 
     .inner {

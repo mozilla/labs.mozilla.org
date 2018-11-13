@@ -2,10 +2,10 @@
 
 .content {
     &[data-observing='true'] {
-        .observing;
+        @extend %observing;
     }
     &[data-intersection='true'] {
-        .intersection;
+        @extend %intersection;
     }
 
     .inner {
@@ -22,14 +22,14 @@
             h1,
             h3,
             p {
-                color: #FFF;
+                color: $color-white;
                 margin: 20px 0 30px;
             }
         }
     }
 
 
-    @media (max-width: @mobile-l-width) {
+    @media (max-width: $mobile-l-width) {
         margin-bottom: 20px;
 
         .inner {

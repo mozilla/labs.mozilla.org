@@ -3,13 +3,13 @@
 .content {
     h4,
     a {
-        .text-2;
-        color: @color-white;
+        //.text-2;
+        color: $color-white;
         margin-bottom: 4px;
     }
 
     h4 {
-        font-weight: @bold;
+        font-weight: $bold;
         line-height: 1;
         margin-bottom: 16px;
     }

@@ -1,25 +1,29 @@
 @import '../../stylesheets/variables';
 
 .content {
-    .component-wrap;
-    margin-bottom: 100px;
-    margin-top: 100px;
 
     &[data-observing='true'] {
-        .observing;
+        @extend %observing;
     }
     &[data-intersection='true'] {
-        .intersection;
+        @extend %intersection;
     }
 
     .inner {
-        display: flex;
         height: 100%;
-        justify-content: space-evenly;
         width: 100%;
 
         .text {
             color: inherit;
+        }
+    }
+
+
+    @media (max-width: $mobile-l-width) {
+        margin-bottom: 20px;
+
+        .inner {
+            margin-top: 6px;
         }
     }
 }

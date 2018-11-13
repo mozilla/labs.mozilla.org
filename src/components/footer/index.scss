@@ -6,7 +6,7 @@
     padding-top: 100px;
 
     .inner {
-        .component-wrap;
+        @extend %component-wrap;
         height: 100%;
         width: 100%;
     }
@@ -16,14 +16,14 @@
     h3,
     p,
     a {
-        color: #FFF;
+        color: $color-white;
     }
 
     a {
         text-decoration: none;
 
         &:hover {
-            color: #FFF;
+            color: $color-white;
             text-decoration: underline;
         }
     }
@@ -72,13 +72,13 @@
 
         .text {
             > p {
-                .text-3;
+                //.text-3;
                 margin-bottom: 26px;
                 max-width: 450px;
             }
 
             .links a {
-                .text-3;
+                //.text-3;
                 margin-right: 15px;
                 text-decoration: underline;
 
@@ -90,9 +90,9 @@
     }
 
     &[data-observing='true'] {
-        .observing;
+        @extend %observing;
     }
     &[data-intersection='true'] {
-        .intersection;
+        @extend %intersection;
     }
 }

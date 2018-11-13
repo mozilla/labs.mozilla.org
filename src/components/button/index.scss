@@ -19,23 +19,23 @@ button {
     }
 
     &.filled {
-        .btn-filled;
+        @include btn-filled;
     }
 
     &.large {
-        .btn-large;
+        @include btn-large;
     }
 
     &.medium {
-        .btn-medium;
+        @include btn-medium;
     }
 
     &.primary {
-        .btn-primary;
+        @include btn-primary;
     }
 
     &.secondary {
-        .btn-secondary;
+        @include btn-secondary;
     }
 
     &.inverted,

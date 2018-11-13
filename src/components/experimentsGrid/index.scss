@@ -1,25 +1,33 @@
 @import '../../stylesheets/variables';
 
 .content {
-    background-color: black;
-    padding-top: 50px;
+    background-color: $color-black;
     padding-bottom: 50px;
+    padding-top: 50px;
 
     &[data-observing='true'] {
         .text,
         .inner {
-            .observing;
+            @extend %observing;
         }
     }
     &[data-intersection='true'] {
         .text,
         .inner {
-            .intersection;
+            @extend %intersection;
         }
     }
 
+    .inner {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
     .text {
-        .component-wrap;
+        @extend %component-wrap;
         margin-bottom: 40px;
 
         > h1,
@@ -33,16 +41,8 @@
         }
     }
 
-    .inner {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
 
-
-    @media (max-width: @mobile-l-width) {
+    @media (max-width: $mobile-l-width) {
         margin-bottom: 20px;
 
         .inner {

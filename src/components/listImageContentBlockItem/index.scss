@@ -39,7 +39,7 @@
         }
 
         &:hover {
-            border-color: @color-black;
+            border-color: $color-black;
 
             .text {
                 h4 {
@@ -51,8 +51,8 @@
 
     &.two,
     &.three {
-        margin-left: @gutter;
-        margin-right: @gutter;
+        margin-left: $gutter;
+        margin-right: $gutter;
 
         .inner {
             flex-direction: column;
@@ -73,6 +73,6 @@
     }
 
     &.dark .inner:hover {
-        border-color: @color-white;
+        border-color: $color-white;
     }
 }
