@@ -1,0 +1,57 @@
+@import '../../stylesheets/variables';
+
+.content {
+    background-color: $color-black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &[data-observing='true'] {
+        @extend %observing;
+    }
+    &[data-intersection='true'] {
+        @extend %intersection;
+    }
+
+    .inner {
+        @extend %component-wrap;
+        padding-bottom: 80px;
+        padding-top: 40px;
+        text-align: center;
+
+        h4,
+        p {
+            color: $color-white;
+        }
+
+        .media {
+            margin-bottom: 87px;
+
+            img {
+                max-height: 76px;
+            }
+        }
+
+        .text {
+            margin: 0 auto;
+            max-width: 620px;
+        }
+
+        .action {
+            margin-top: 70px;
+        }
+    }
+
+
+    @media (max-width: $mobile-max-width) {
+        .inner {
+            .media {
+                margin-bottom: 60px;
+            }
+
+            .action {
+                margin-top: 30px;
+            }
+        }
+    }
+}
