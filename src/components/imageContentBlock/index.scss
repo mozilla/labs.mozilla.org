@@ -26,8 +26,8 @@ $fill-color: red;
         }
 
         h3 {
-            position: relative;
             margin-bottom: 14px;
+            position: relative;
             z-index: 1;
 
             &:before {
@@ -75,8 +75,12 @@ $fill-color: red;
     }
 
     &:hover {
-        .text h3:before {
-            width: 64px;
+        .text h3 {
+            text-decoration: underline;
+
+            &:before {
+                width: 64px;
+            }
         }
 
         .media {
@@ -90,7 +94,6 @@ $fill-color: red;
         flex-direction: row;
 
         .media {
-            justify-content: flex-end;
             order: 2;
         }
 
@@ -112,7 +115,6 @@ $fill-color: red;
             }
 
             .media {
-                justify-content: flex-start;
                 margin: 0 auto 0 0;
                 order: 1;
             }
@@ -120,8 +122,8 @@ $fill-color: red;
     }
 
     @media (max-width: $mobile-max-width) {
-        .text > a {
-            display: block;
+        .text {
+            text-align: center;
         }
     }
 }
