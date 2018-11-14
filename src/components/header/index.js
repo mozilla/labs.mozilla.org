@@ -24,13 +24,50 @@ export default withStyles(styles)(
         })
     )(
         class extends Component {
+            constructor(props) {
+                super(props);
+                this.state = {
+                    desktop: true
+                }
+            }
+
+
             static defaultProps = {
                 onRef() {}
             };
 
             componentDidMount() {
                 this.props.onRef(this);
+
+                this.setState({
+                    desktop: this.viewportWidth > 768
+                });
+
+                if(process.env.BROWSER) {
+                    window.addEventListener('resize', this.resizeHandler);
+                }
             }
+
+            componentWillUnmount() {
+                if(process.env.BROWSER) {
+                    window.removeEventListener('resize', this.resizeHandler);
+                }
+            }
+
+            resizeHandler = () => {
+                const {
+                    dispatch
+                } = this.props;
+
+                if(this.viewportWidth > 768 && !this.state.desktop) {
+                    this.setState({desktop: true});
+                    this.bodyOverflow(true);
+                    dispatch(mobileMenuVisibilityHandler(false))
+                } else if(this.viewportWidth < 769 && this.state.desktop) {
+                    this.bodyOverflow(true);
+                    this.setState({desktop: false});
+                }
+            };
 
             bodyOverflow = bool => {
                 if(process.env.BROWSER) {
@@ -68,7 +105,8 @@ export default withStyles(styles)(
 
             closeMobile = () => {
                 const {
-                    dispatch
+                    dispatch,
+                    mobileMenuVisibility
                 } = this.props;
 
                 if(this.viewportWidth < 769) {
@@ -76,7 +114,7 @@ export default withStyles(styles)(
                         mobileMenuVisibilityHandler(false)
                     );
 
-                    this.bodyOverflow(1)
+                    this.bodyOverflow(mobileMenuVisibility)
                 }
             };
 
