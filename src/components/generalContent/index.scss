@@ -1,7 +1,7 @@
 @import '../../stylesheets/variables';
 
-
 $gutterWidth: 30px;
+$link-color: #0060DF;
 
 .content {
     overflow: hidden;
@@ -62,6 +62,9 @@ $gutterWidth: 30px;
     }
 
     p {
+        font-size: 18px;
+        font-size: 1.125rem;
+        line-height: 1.333;
         margin-bottom: 32px;
 
         + h3 {
@@ -74,13 +77,13 @@ $gutterWidth: 30px;
         margin-bottom: 40px;
 
         li {
-            padding-left: 26px;
-            position: relative;
             margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
 
             &:before {
                 content: '•';
-                font-size: 50px;
+                font-size: 30px;
                 left: 0;
                 line-height: 20px;
                 position: absolute;
@@ -129,6 +132,22 @@ $gutterWidth: 30px;
 
         &:active {
             //background: $color-link-active;
+        }
+    }
+
+    hr {
+        background-color: #D6D0D0;
+        height: 1px;
+        margin: 32px auto;
+        max-width: $totalWidth - 2 * $gutterWidth;
+    }
+
+    a {
+        color: $link-color;
+        font-weight: $semi-bold;
+
+        &:hover {
+            color: lighten($link-color, 20%);
         }
     }
 

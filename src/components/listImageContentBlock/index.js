@@ -31,8 +31,8 @@ export default withStyles(styles)(
             }>
                 <div className={styles.inner}>
                     <div className={styles.text}>
-                        <h2>{title}</h2>
-                        <p>{description}</p>
+                        {title && <h2>{title}</h2>}
+                        {description && <p>{description}</p>}
                     </div>
 
                     <div className={grid && styles[grid]}>
