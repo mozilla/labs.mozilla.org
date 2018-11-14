@@ -78,6 +78,9 @@ export default withStyles(styles)(
                                         title,
                                         video: {
                                             url = ''
+                                        } = {},
+                                        poster: {
+                                            url: posterUrl = ''
                                         } = {}
                                     },
                                     index) =>
@@ -85,6 +88,7 @@ export default withStyles(styles)(
                                         key={id + index}
                                         className={styles.slide}
                                         preload={'true'}
+                                        poster={posterUrl ? posterUrl : ''}
                                         controls
                                         src={url}
                                     />

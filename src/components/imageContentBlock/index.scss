@@ -27,6 +27,7 @@ $fill-color: red;
 
         h3 {
             position: relative;
+            margin-bottom: 14px;
             z-index: 1;
 
             &:before {
@@ -39,6 +40,10 @@ $fill-color: red;
                 width: 0;
                 will-change: width;
             }
+        }
+
+        > a {
+            margin-top: 6px;
         }
     }
 

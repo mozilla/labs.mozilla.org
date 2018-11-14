@@ -9,8 +9,8 @@
     .inner {
         @extend %component-wrap;
         height: 100%;
-        padding-bottom: 200px;
-        padding-top: 200px;
+        padding-bottom: 140px;
+        padding-top: 220px;
         position: relative;
         width: 100%;
 
@@ -18,7 +18,7 @@
             max-width: 424px;
 
             > div {
-                margin-top: 34px;
+                margin-top: 32px;
             }
 
             p {
@@ -46,9 +46,9 @@
         .btnWrap {
             align-items: center;
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
-            margin-top: 47px;
+            justify-content: space-between;
+            margin-top: 50px;
 
             > a {
                 padding: 0 32px;
@@ -85,14 +85,14 @@
 
     @media (max-width: $tablet-max-width) {
         .inner {
-            padding-bottom: 100px;
-            padding-top: 100px;
+            padding-bottom: 70px;
+            padding-top: 160px;
         }
     }
 
     @media (max-width: $mobile-l-width) {
         .inner {
-            padding-bottom: 50px;
+            padding-bottom: 35px;
         }
     }
 }
