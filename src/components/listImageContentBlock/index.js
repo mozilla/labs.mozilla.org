@@ -23,7 +23,7 @@ export default withStyles(styles)(
                 button: [Component, props] = []
             } = this.props;
 
-            const grid = numberOfColumns === 3 ? 'three' : numberOfColumns === 2 ? 'two' : '';
+            const grid = numberOfColumns === 3 ? 'three' : numberOfColumns === 2 ? 'two' : 'single';
 
             return <section className={
                 `${styles.content}

@@ -75,4 +75,26 @@
     &.dark .inner:hover {
         border-color: $color-white;
     }
+
+    @media (max-width: $mobile-max-width) {
+        &.two,
+        &.three,
+        &.single {
+            margin-left: $gutter;
+            margin-right: $gutter;
+
+            .inner {
+                flex-direction: column;
+                max-width: 290px;
+
+                .media {
+                    max-width: 100%;
+                }
+
+                .text {
+                    margin: 35px 8px 8px;
+                }
+            }
+        }
+    }
 }

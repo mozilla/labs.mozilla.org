@@ -127,4 +127,15 @@
             }
         }
     }
+
+    @media (max-width: $mobile-max-width) {
+        .inner {
+            padding-bottom: 50px;
+            padding-top: 50px;
+
+            .text {
+                margin-bottom: 50px;
+            }
+        }
+    }
 }

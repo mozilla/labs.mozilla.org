@@ -1,7 +1,11 @@
 @import '../../stylesheets/variables';
 
 .content {
-    h4,
+    > p {
+        font-weight: $bold;
+        margin-bottom: 13px;
+    }
+
     a {
         //.text-2;
         color: $color-white;

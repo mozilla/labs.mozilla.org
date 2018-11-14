@@ -2,8 +2,8 @@
 
 .content {
     background-color: black;
-    padding-bottom: 130px;
-    padding-top: 100px;
+    padding-bottom: 80px;
+    padding-top: 50px;
 
     .inner {
         @extend %component-wrap;
@@ -14,6 +14,8 @@
     h1,
     h2,
     h3,
+    h4,
+    h5,
     p,
     a {
         color: $color-white;
@@ -36,25 +38,32 @@
         }
     }
 
+    &[data-observing='true'] {
+        @extend %observing;
+    }
+    &[data-intersection='true'] {
+        @extend %intersection;
+    }
+
     .wrap {
         display: flex;
-        margin-bottom: 60px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
 
         > div {
+            margin-bottom: 20px;
             width: 50%;
         }
     }
 
     .wrap2 {
         border-top: 1px solid rgba(255, 255, 255, .3);
-        display: flex;
         padding-top: 30px;
 
         .social {
-            align-items: flex-end;
             display: flex;
-            flex: 1;
-            justify-content: flex-end;
+            justify-content: center;
+            margin-top: 20px;
 
             a {
                 height: 48px;
@@ -70,17 +79,14 @@
             }
         }
 
-        .text {
-            > p {
-                //.text-3;
-                margin-bottom: 26px;
-                max-width: 450px;
-            }
+        .text .links {
+            display: flex;
+            flex-wrap: wrap;
 
-            .links a {
-                //.text-3;
+            a {
                 margin-right: 15px;
                 text-decoration: underline;
+                white-space: nowrap;
 
                 &:hover {
                     text-decoration: none;
@@ -89,10 +95,32 @@
         }
     }
 
-    &[data-observing='true'] {
-        @extend %observing;
-    }
-    &[data-intersection='true'] {
-        @extend %intersection;
+    @media (min-width: $desktop-min-width) {
+        padding-bottom: 130px;
+        padding-top: 100px;
+
+        .wrap {
+            > div {
+                width: 25%;
+            }
+        }
+
+        .wrap2 {
+            display: flex;
+
+            .social {
+                align-items: flex-end;
+                flex: 1;
+                justify-content: flex-end;
+                margin-top: 0;
+            }
+
+            .text {
+                > p {
+                    margin-bottom: 26px;
+                    max-width: 450px;
+                }
+            }
+        }
     }
 }

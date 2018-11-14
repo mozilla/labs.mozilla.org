@@ -47,6 +47,7 @@
             align-items: center;
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             margin-top: 47px;
 
             > a {
@@ -74,15 +75,32 @@
             @extend %intersection;
         }
     }
+
+    @media (max-width: 500px) {
+        .inner .btnWrap a {
+            display: block;
+            margin: 10px auto !important;
+        }
+    }
+
+    @media (max-width: $tablet-max-width) {
+        .inner {
+            padding-bottom: 100px;
+            padding-top: 100px;
+        }
+    }
+
+    @media (max-width: $mobile-l-width) {
+        .inner {
+            padding-bottom: 50px;
+        }
+    }
 }
 
 main > section.content {
-    //padding-top: 56px;
-
     &:first-child {
         align-items: center;
         display: flex;
-        //min-height: 100vh;
 
         .inner {
             align-items: center;

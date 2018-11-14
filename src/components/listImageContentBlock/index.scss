@@ -1,7 +1,7 @@
 @import '../../stylesheets/variables';
 
 .content {
-    padding-bottom: 50px;
+    padding-bottom: 100px;
     padding-top: 100px;
 
     &[data-observing='true'] {
@@ -52,9 +52,33 @@
         }
 
         .more {
-            margin-bottom: 100px;
+            //margin-bottom: 100px;
             margin-top: 75px;
             text-align: center;
+        }
+    }
+
+    @media (max-width: $mobile-max-width) {
+        padding-bottom: 50px;
+        padding-top: 50px;
+
+        .inner {
+            .two,
+            .three {
+                justify-content: space-evenly;
+            }
+
+            .more {
+                margin-top: 25px;
+            }
+
+            .single {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+                margin-left: -$gutter;
+                margin-right: -$gutter;
+            }
         }
     }
 }

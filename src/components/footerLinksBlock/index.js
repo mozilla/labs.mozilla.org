@@ -12,7 +12,7 @@ export default withStyles(styles)(
             } = this.props;
 
             return <div className={styles.content}>
-                <h4>{title}</h4>
+                <p>{title}</p>
 
                 <div className={styles.inner}>
                     {links && links.length && links

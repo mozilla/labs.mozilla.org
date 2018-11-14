@@ -113,4 +113,10 @@ $fill-color: red;
             }
         }
     }
+
+    @media (max-width: $mobile-max-width) {
+        .text > a {
+            display: block;
+        }
+    }
 }
