@@ -1,13 +1,55 @@
 //@import './variables';
 
+* {
+    border: none;
+    box-sizing: border-box;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+}
+
 @import '../../node_modules/@mozilla-protocol/core/protocol/css/base/elements/reset';
 
 @import '../../node_modules/@mozilla-protocol/core/protocol/css/base/elements/document';
 
 @import '../../node_modules/@mozilla-protocol/core/protocol/css/base/elements/typography';
 
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    -webkit-text-size-adjust: none;
+    -ms-content-zooming: none;
+}
+
+body,
+button,
+input,
+textarea {
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+textarea {
+    appearance: none;
+}
+
+textarea {
+    resize: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+
 h1, h2, h3, h4 {
-    font-family: "Sharp Sans", "Open Sans", X-LocaleSpecific, sans-serif
+    font-family: "Sharp Sans", "Open Sans", X-LocaleSpecific, sans-serif;
 }
 
 a {
