@@ -1,0 +1,120 @@
+@import '../../stylesheets/variables';
+
+// FORM
+.content {
+    overflow: hidden;
+    position: relative;
+
+    .newsletter_thanks,
+    .form {
+        transition: all .3s ease-in-out;
+    }
+
+    .newsletter_thanks {
+        opacity: 0;
+        position: absolute;
+        top: 100%;
+    }
+
+    &.success {
+        .form {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+
+        .newsletter_thanks {
+            opacity: 1;
+            transform: translateY(-100%);
+        }
+    }
+
+    .newsletter_errors {
+        background-color: rgba(0, 0, 0, .1); // incase it's on a white background
+        border: 1px solid #C00;
+        box-shadow: 0 0 0 1px #FFF; // incase it's on a black background
+        display: none; /* hide by default */
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .newsletter_errors:last-child {
+        margin-bottom: 0;
+    }
+
+    .form_group {
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    .form_group-agree {
+        padding-left: 1.5em; // roughly width of a checkbox
+        text-indent: -1.5em;
+    }
+
+    .form_input {
+        background-color: #FFF;
+        border: 1px solid #B1B1B3;
+        border-radius: 2px;
+    }
+
+    label {
+        display: block;
+        position: relative;
+
+        p {
+            font-weight: $bold;
+            margin-bottom: 4px;
+        }
+    }
+
+    input[type='checkbox'] {
+        display: none;
+        height: 0;
+        opacity: 0;
+        width: 0;
+
+        ~ div {
+            margin: 0 0 20px 25px;
+        }
+    }
+
+    .checkmark {
+        border: 1px solid #B1B1B3;
+        height: 16px;
+        left: 0;
+        position: absolute;
+        top: 5px;
+        width: 16px;
+
+        &:after {
+            display: none;
+            content: '';
+            position: absolute;
+        }
+
+        &:after {
+            left: 4px;
+            top: 0;
+            width: 4px;
+            height: 8px;
+            border: solid $color-black;
+            border-width: 0 3px 3px 0;
+            transform: rotate(45deg);
+        }
+    }
+
+    input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    input:not([type='radio']):not([type='checkbox']) {
+        font-size: .875rem;
+        line-height: 1;
+        padding: 5px 15px;
+        width: 100%;
+    }
+
+    button {
+        cursor: pointer;
+    }
+}

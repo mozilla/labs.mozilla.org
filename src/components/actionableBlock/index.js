@@ -31,9 +31,7 @@ export default withStyles(styles)(
                 button: [Component, props] = []
             } = this.props;
 
-            console.log('123', this.props);
-
-            return <div
+            return <section
                 className={styles.content}
                 style={bgImage ? {backgroundImage: `url(${bgImage})`} : {}}
             >
@@ -51,7 +49,7 @@ export default withStyles(styles)(
                         <Component inverted={true} {...props}/>
                     </div>
                 </div>
-            </div>
+            </section>
         }
     }
 )

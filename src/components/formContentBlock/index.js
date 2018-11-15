@@ -16,6 +16,7 @@ export default withStyles(styles)(
         render() {
             const {
                 title,
+                form: [Form, props] = [],
                 image: {
                     url,
                     details: {
@@ -33,21 +34,7 @@ export default withStyles(styles)(
                             alt={title}/>
                     </div>
 
-                    <div className={styles.text}>
-                        <div>
-                            <h1>{title}</h1>
-
-                            <label htmlFor="email_signup">
-                                <input id="email_signup" type="email"/>
-                            </label>
-
-                            <div>
-                                <button type={'submit'}>
-                                    <span>Sign up</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <Form {...props}/>
                 </div>
             </section>
         }

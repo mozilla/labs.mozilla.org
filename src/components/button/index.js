@@ -21,6 +21,7 @@ export default withStyles(styles)(
                 url,
                 theme,
                 inverted,
+                type,
                 image: {
                     url: imageUrl = '',
                     details: {
@@ -31,23 +32,38 @@ export default withStyles(styles)(
                 } = {}
             } = this.props;
 
-            return <a
-                href={url}
-                className={
-                    `${styles.button}
-                    ${buttonClass ? styles[buttonClass] : ''}
-                    ${size ? styles[size] : ''}
-                    ${inverted ? styles.inverted : ''}
-                    ${theme ? styles[theme] : ''}`
-                }
-            >
-                {imageUrl ?
-                    <img
-                        src={`${imageUrl}?scale=fit&w=${Math.ceil(width/2).toFixed()}`}
-                        srcSet={`${imageUrl} 2x`}
-                        alt={title}/> :
-                    <span>{title}</span>}
-            </a>
+            if(type) {
+                return <button
+                    type={type}
+                    className={
+                        `${styles.button}
+                        ${buttonClass ? styles[buttonClass] : ''}
+                        ${size ? styles[size] : ''}
+                        ${inverted ? styles.inverted : ''}
+                        ${theme ? styles[theme] : ''}`
+                    }
+                >
+                    <span>{title}</span>
+                </button>
+            } else {
+                return <a
+                    href={url}
+                    className={
+                        `${styles.button}
+                        ${buttonClass ? styles[buttonClass] : ''}
+                        ${size ? styles[size] : ''}
+                        ${inverted ? styles.inverted : ''}
+                        ${theme ? styles[theme] : ''}`
+                    }
+                >
+                    {imageUrl ?
+                        <img
+                            src={`${imageUrl}?scale=fit&w=${Math.ceil(width/2).toFixed()}`}
+                            srcSet={`${imageUrl} 2x`}
+                            alt={title}/> :
+                        <span>{title}</span>}
+                </a>
+            }
         }
     }
 )

@@ -2,8 +2,8 @@
 
 .content {
     @extend %component-wrap;
-    padding-top: 70px;
     padding-bottom: 70px;
+    padding-top: 70px;
 
     &[data-observing='true'] {
         @extend %observing;
@@ -13,28 +13,25 @@
     }
 
     .inner {
+        align-items: center;
         display: flex;
         height: 100%;
+        justify-content: space-between;
         width: 100%;
 
         > div {
+            max-width: 350px;
             width: 50%;
         }
 
-        .text,
         .media {
             color: inherit;
         }
+    }
 
-        .text {
-            display: flex;
+    @media (max-width: $mobile-max-width) {
+        .inner {
             flex-direction: column;
-            //align-items: center;
-            justify-content: center;
-
-            [type='submit'] {
-                @include btn-primary;
-            }
         }
     }
 }

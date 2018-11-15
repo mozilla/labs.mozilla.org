@@ -185,6 +185,7 @@ $border-2: #FE448D;
 
 @mixin btn-primary {
     background-color: white;
+    border: 2px solid $color-black;
     position: relative;
 
     &:before,
@@ -203,12 +204,22 @@ $border-2: #FE448D;
 
     &:before {
         background-color: $border-1;
-        transform: translate(-4px, -4px);
+        transform: translate(0, 0);
     }
 
     &:after {
         background-color: $border-2;
-        transform: translate(4px, 4px);
+        transform: translate(0, 0);
+    }
+
+    &:hover {
+        &:before {
+            transform: translate(-4px, -4px);
+        }
+
+        &:after {
+            transform: translate(4px, 4px);
+        }
     }
 
     span {
