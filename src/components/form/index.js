@@ -125,7 +125,7 @@ export default withStyles(styles)(
 
                     {this.state.errorArray.length ? <div ref={this.errors} className={styles.newsletter_errors}>
                         {this.state.errorArray
-                            .map(error => <div data-tag="error">{error}</div>)}
+                            .map((error, index) => <div key={error + index} data-tag="error">{error}</div>)}
                     </div> : null}
 
                     <div id="newsletter_email" className={styles.form_group}>

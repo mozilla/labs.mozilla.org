@@ -15,13 +15,18 @@ export default withStyles(styles)(class extends Component {
     }
 
     render() {
-        const {description = ''} = this.props;
+        const {
+            description = '',
+            asideBlock: [AsideContentBlock, props] = []
+        } = this.props;
 
-        return <section className={styles.content}>
+        return <section className={`${styles.content} ${AsideContentBlock ? styles.aside : ''}`}>
             <div
                 className={styles.inner}
                 dangerouslySetInnerHTML={{__html: md.render(description)}}
             />
+
+            {AsideContentBlock && <AsideContentBlock {...props}/>}
         </section>
     }
 })

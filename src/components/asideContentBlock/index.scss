@@ -1,0 +1,54 @@
+@import '../../stylesheets/variables';
+
+.content {
+
+    &[data-observing='true'] {
+        @extend %observing;
+    }
+    &[data-intersection='true'] {
+        @extend %intersection;
+    }
+
+    .inner {
+        height: 100%;
+        width: 100%;
+
+        .text {
+            color: inherit;
+        }
+    }
+
+    .buttons > div {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: $totalWidth;
+
+        a {
+            display: block;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+    }
+
+
+    @media (max-width: $mobile-max-width) {
+        .buttons > div {
+            display: flex;
+            justify-content: space-evenly;
+
+            a {
+                display: inline-block;
+                width: initial;
+            }
+        }
+    }
+
+    @media (max-width: $mobile-l-width) {
+        .buttons > div {
+            flex-direction: column;
+        }
+    }
+}
