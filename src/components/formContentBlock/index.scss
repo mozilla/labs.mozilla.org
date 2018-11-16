@@ -32,6 +32,10 @@
     @media (max-width: $mobile-max-width) {
         .inner {
             flex-direction: column;
+
+            .media {
+                margin-bottom: 50px;
+            }
         }
     }
 }

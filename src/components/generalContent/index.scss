@@ -1,12 +1,14 @@
 @import '../../stylesheets/variables';
 
 $gutterWidth: 30px;
-$link-color: #0060DF;
 
 .content {
     overflow: hidden;
-    margin-bottom: 100px;
     padding-top: 72px;
+
+    + .buttonsArray & {
+        margin-bottom: 0;
+    }
 
     &[data-observing='true'] {
         @extend %observing;
@@ -48,8 +50,8 @@ $link-color: #0060DF;
         h6,
         p,
         ul {
-            padding-left: $gutterWidth / 2;
-            padding-right: $gutterWidth / 2;
+            padding-left: $gutter / 2;
+            padding-right: $gutter / 2;
         }
 
         h1,
@@ -63,7 +65,7 @@ $link-color: #0060DF;
         figure {
             margin-left: auto;
             margin-right: auto;
-            max-width: $totalWidth;
+            max-width: $totalWidth + $gutter * 4;
             padding-left: $gutterWidth;
             padding-right: $gutterWidth;
         }
@@ -95,10 +97,8 @@ $link-color: #0060DF;
         margin-bottom: 2rem;
     }
 
-    p {
-        + h3 {
-            margin-top: 64px;
-        }
+    p + h3 {
+        margin-top: 64px;
     }
 
     ul {
@@ -168,7 +168,7 @@ $link-color: #0060DF;
         background-color: #D6D0D0;
         height: 1px;
         margin: 32px auto;
-        max-width: $totalWidth - 2 * $gutterWidth;
+        max-width: $totalWidth - 2 * $gutter;
     }
 
     a {

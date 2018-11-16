@@ -3,13 +3,26 @@
 .content {
     @extend %component-wrap;
     margin-bottom: 80px;
-    margin-top: 80px;
 
     &[data-observing='true'] {
         @extend %observing;
     }
     &[data-intersection='true'] {
         @extend %intersection;
+    }
+
+    p {
+        font-size: 1.125rem;
+        line-height: 1.333;
+
+        a {
+            color: $link-color;
+            font-weight: $semi-bold;
+
+            &:hover {
+                color: lighten($link-color, 20%);
+            }
+        }
     }
 
     .inner {

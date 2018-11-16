@@ -77,9 +77,12 @@
     }
 
     @media (max-width: 500px) {
-        .inner .btnWrap a {
-            display: block;
-            margin: 10px auto !important;
+        .inner .btnWrap {
+            button,
+            a {
+                display: block;
+                margin: 10px auto !important;
+            }
         }
     }
 
