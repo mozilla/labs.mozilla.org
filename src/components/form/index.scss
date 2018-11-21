@@ -29,6 +29,12 @@
         }
     }
 
+    .privacyError {
+        .checkmark {
+            border-color: #C00;
+        }
+    }
+
     .newsletter_errors {
         background-color: rgba(0, 0, 0, .1); // incase it's on a white background
         border: 1px solid #C00;

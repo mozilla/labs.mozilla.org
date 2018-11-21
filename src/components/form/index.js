@@ -20,6 +20,7 @@ export default withStyles(styles)(
             this.form = React.createRef(); // #newsletter_form
             this.errors = React.createRef(); // #newsletter_errors
             this.thanks = React.createRef(); // #newsletter_thanks
+            this.privacy = React.createRef();
         }
 
         componentDidMount() {
@@ -27,16 +28,16 @@ export default withStyles(styles)(
                 fmt: this.props.fmt || '',
                 newsletters: this.props.newsletters || ''
             })
-
-            window.md = md;
-
-            window.test = this.props.privacyText;
         }
 
         handleInputChange = event => {
             const target = event.target;
             const value = target.type === 'checkbox' ? target.checked : target.value;
             const name = target.name;
+
+            if(target.type === 'checkbox' && this.privacy && this.privacy.current) {
+                this.privacy.current.classList.remove(styles.privacyError);
+            }
 
             this.setState({
                 [name]: value
@@ -59,6 +60,10 @@ export default withStyles(styles)(
             })
         };
 
+        privacyError = node => {
+            node.classList.add(styles.privacyError)
+        };
+
         newsletterSubscribe = evt => {
             const skipXHR = this.form.current.getAttribute('data-skip-xhr');
 
@@ -73,6 +78,14 @@ export default withStyles(styles)(
             this.setState({
                 errors: []
             });
+
+            if(!this.state.privacy) {
+                if(this.privacy && this.privacy.current) {
+                    this.privacyError(this.privacy.current);
+                }
+
+                return
+            }
 
             const fmt = this.props.fmt.trim();
             const newsletter = this.props.newsletters.trim();
@@ -141,9 +154,12 @@ export default withStyles(styles)(
                         </label>
                     </div>
 
-                    <label htmlFor="privacy">
+                    <label
+                        htmlFor="privacy"
+                        ref={this.privacy}
+                    >
                         <input
-                            id="privacy" type="checkbox" name="privacy" required
+                            id="privacy" type="checkbox" name="privacy"
                             checked={this.state.privacy}
                             onChange={this.handleInputChange}
                         />
