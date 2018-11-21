@@ -5,14 +5,22 @@
     padding-top: 50px;
 
     &[data-observing='true'] {
-        @extend %observing;
+        .inner {
+            @extend %observing;
+        }
     }
     &[data-intersection='true'] {
-        @extend %intersection;
+        .inner {
+            @extend %intersection;
+        }
     }
 
     &.gray {
         background-color: $gray-bg;
+    }
+
+    &.gray-20 {
+        background-color: $gray-20;
     }
 
     &.dark {

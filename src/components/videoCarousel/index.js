@@ -40,7 +40,7 @@ export default withStyles(styles)(
 
         initSwiper = async el => {
             // if(this.props.videoCarousel && !this.props.videoCaraousel.length) {}
-            if (!el || this.swiper) {
+            if(!el || this.swiper) {
                 return
             }
 
@@ -66,6 +66,34 @@ export default withStyles(styles)(
                     prevEl: `.${styles['slider-btn-prev']}`,
                     nextEl: `.${styles['slider-btn-next']}`,
                     disabledClass: styles.disabled
+                },
+                on: {
+                    click: e => {
+                        let target = e.target;
+
+                        if(!target.classList.contains(`.${styles.slide}`)) {
+                            target = target.closest(`.${styles.slide}`)
+                        }
+
+                        const index = target.getAttribute('data-index');
+
+                        if(self.swiperModal && self.swiper.slideTo instanceof Function) {
+                            self.stopVideo();
+                            self.swiperModal.slideTo(index);
+
+                            if(self.swiperModal.el) {
+                                const modalSlides = self.swiperModal.el.querySelectorAll(`.${styles.slideM}`);
+
+                                if([...modalSlides][index] !== null) {
+                                    self.playVideo([...modalSlides][index]);
+                                }
+                            }
+
+                            self.setState({
+                                visibleModal: true
+                            })
+                        }
+                    }
                 }
             })
         };
@@ -101,32 +129,38 @@ export default withStyles(styles)(
                     disabledClass: styles.disabledM
                 },
                 on: {
-                    transitionEnd: e => {
+                    transitionEnd: () => {
                         const current = el.querySelector(`.${styles.activeM}`);
 
                         this.playVideo(current)
                     },
-                    slideChange: e => {
-                        const slides = el.querySelectorAll(`.${styles.slide}`);
-
-                        this.stopVideo(slides);
+                    slideChange: () => {
+                        this.stopVideo();
                     }
                 }
             })
         };
 
-        stopVideo = (nodes) => {
-            const slides = [...nodes];
+        stopVideo = () => {
+            const sliders = [];
 
-            if(slides && slides.length) {
-                slides.forEach(slide => {
-                    const video = slide.querySelector('video');
-
-                    if(video !== null) {
-                        video.pause();
-                    }
-                })
+            if(this.swiper) {
+                sliders.push(document.querySelector(`.${styles.mainSlider}`))
             }
+
+            if(this.swiperModal) {
+                sliders.push(document.querySelector(`.${styles.modalSlider}`))
+            }
+
+            if(!sliders.length) {
+                return
+            }
+
+            sliders.forEach(slider => {
+                const videos = slider.querySelectorAll('video');
+
+                [...videos].forEach(video => video.pause());
+            });
         };
 
         playVideo = current => {
@@ -136,13 +170,15 @@ export default withStyles(styles)(
                 if(video !== null) {
                     const playPromise = video.play();
 
-                    playPromise
-                        .then(() => {
-                            // console.log('play')
-                        })
-                        .catch(err => {
-                            console.log('playPriomise err', err);
-                        })
+                    if(playPromise !== undefined) {
+                        playPromise
+                            .then(() => {
+                                // console.log('play')
+                            })
+                            .catch(err => {
+                                console.error('playPromise err', err);
+                            })
+                    }
                 }
             }
         };
@@ -159,18 +195,10 @@ export default withStyles(styles)(
             }
         }
 
-        selectSlide = (event, index) => {
-            if(!this.props.slidesPerView) {
-                return;
-            }
-
-            this.setState({
-                visibleModal: true
-            });
-        };
-
         closeModal = e => {
             const target = e.target;
+
+            this.stopVideo();
 
             if(target.classList.contains(styles.closeButton) || target.classList.contains(styles.overlay)) {
                 this.setState({
@@ -189,7 +217,7 @@ export default withStyles(styles)(
             } = this.props;
 
             return [
-                <div key={`${id}-main-container`} className={styles.content}>
+                <section key={`${id}-main-container`} className={styles.content}>
                     <div className={styles.inner}>
                         <div className={styles.text}>
                             <h2>{title}</h2>
@@ -207,8 +235,8 @@ export default withStyles(styles)(
                                         .map(([Component, props], index) =>
                                             <div
                                                 key={props.id + index}
+                                                data-index={index}
                                                 className={styles.slide}
-                                                onClick={e => this.selectSlide(e, index)}
                                                 style={{cursor: 'pointer'}}
                                             >
                                                 {slidesPerView ? <img
@@ -232,7 +260,7 @@ export default withStyles(styles)(
                             ]}
                         </div>
                     </div>
-                </div>,
+                </section>,
                 <div
                     key={`${id}-modal-container`}
                     className={`${styles.modalSlider} ${this.state.visibleModal ? styles.visibleModal : ''}`}
@@ -258,6 +286,7 @@ export default withStyles(styles)(
                                         .map(([Component, props], index) =>
                                             <div
                                                 key={props.id + index}
+                                                data-index={index}
                                                 className={`${styles.slide} ${styles.slideM}`}
                                                 style={{cursor: 'pointer'}}
                                             >

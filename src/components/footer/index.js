@@ -19,22 +19,14 @@ export default withStyles(styles)(
                 buttonsBlock,
                 links,
                 linksBlock,
-                logo: {
-                    title,
-                    url,
-                    details: {
-                        image: {
-                            width
-                        } = {}
-                    } = {}
-                } = {}
+                logo: [Component, props] = []
             } = this.props;
 
             return <footer className={styles.content}>
                 <div className={styles.inner}>
 
                     <div className={styles.logo}>
-                        <img src={url} alt={title}/>
+                        {Component && <Component {...props}/>}
                     </div>
 
 

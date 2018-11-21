@@ -68,6 +68,8 @@ export default withStyles(styles)(
                 </button>
             }
 
+            const reImage = /\.(bmp|gif|jpg|jpeg|png)$/;
+
             return <a
                 href={url}
                 className={
@@ -78,11 +80,12 @@ export default withStyles(styles)(
                     ${theme ? styles[theme] : ''}`
                 }
             >
-                {imageUrl ?
+                {imageUrl ? reImage.test(imageUrl) ?
                     <img
                         src={`${imageUrl}?scale=fit&w=${Math.ceil(width/2).toFixed()}`}
                         srcSet={`${imageUrl} 2x`}
                         alt={title}/> :
+                    <img src={imageUrl} alt={title}/> :
                     <span>{title}</span>}
             </a>
         }

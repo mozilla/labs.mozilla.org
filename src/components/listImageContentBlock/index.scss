@@ -5,11 +5,15 @@
     padding-top: 100px;
 
     &[data-observing='true'] {
-        @extend %observing;
+        .inner {
+            @extend %observing;
+        }
     }
 
     &[data-intersection='true'] {
-        @extend %intersection;
+        .inner {
+            @extend %intersection;
+        }
     }
 
     &.dark {

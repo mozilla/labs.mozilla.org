@@ -4,10 +4,14 @@
     //overflow: hidden;
 
     &[data-observing='true'] {
-        @extend %observing;
+        .inner {
+            @extend %observing;
+        }
     }
     &[data-intersection='true'] {
-        @extend %intersection;
+        .inner {
+            @extend %intersection;
+        }
     }
 
     video {
