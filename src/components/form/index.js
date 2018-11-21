@@ -99,6 +99,7 @@ export default withStyles(styles)(
         render() {
             const {
                 title,
+                formId = 'mozilla-technology',
                 description,
                 newsletters = '', // "mozilla-and-you"
                 fmt = '', // 'H'
@@ -128,7 +129,7 @@ export default withStyles(styles)(
                             .map((error, index) => <div key={error + index} data-tag="error">{error}</div>)}
                     </div> : null}
 
-                    <div id="newsletter_email" className={styles.form_group}>
+                    <div id={formId} className={styles.form_group}>
                         <label htmlFor="email">
                             <p>Email Address</p>
                             <input
