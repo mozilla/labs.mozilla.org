@@ -1,7 +1,7 @@
 @import '../../stylesheets/variables';
 
 .content {
-    //overflow: hidden;
+    overflow: hidden;
 
     &[data-observing='true'] {
         .inner {
@@ -42,16 +42,20 @@
 }
 
 .modalSlider {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
-    //width: 100vw;
-    //height: 100vh;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    position: fixed;
+    right: 0;
+    top: 0;
     visibility: hidden;
     z-index: -1;
-    background-color: rgba(0, 0, 0, .7);
+
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
 
 
     &.visibleModal {
@@ -60,6 +64,7 @@
     }
 
     .modalInner {
+        margin-top: 100px;
         position: relative;
         top: 50%;
         transform: translateY(-50%);
@@ -91,23 +96,24 @@
     font-family: 'Sharp Sans', 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
     font-size: 1rem;
     font-weight: $bold;
-    padding: 10px 20px;
+    line-height: 36px;
+    padding: 4px 20px 0;
     position: absolute;
-    top: 0;
     right: 15px;
+    top: 0;
     transform: translateY(-40px);
     z-index: 102;
 }
 
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
     background-color: rgba(0, 0, 0, .7);
+    bottom: 0;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
     z-index: -1;
 }
 
@@ -177,6 +183,10 @@
     &.disabled svg path,
     &.disabledM svg path {
         fill: #CCC;
+    }
+
+    @media (max-width: $totalWidth) {
+        display: none;
     }
 }
 

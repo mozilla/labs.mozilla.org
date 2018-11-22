@@ -4,6 +4,7 @@
     background: $color-black no-repeat center;
     background-size: cover;
     color: $color-white;
+    min-height: 680px;
     position: relative;
 
     .inner {
@@ -87,6 +88,8 @@
     }
 
     @media (max-width: $tablet-max-width) {
+        min-height: 400px;
+
         .inner {
             padding-bottom: 70px;
             padding-top: 160px;
@@ -94,6 +97,8 @@
     }
 
     @media (max-width: $mobile-l-width) {
+        min-height: 300px;
+
         .inner {
             padding-bottom: 35px;
         }

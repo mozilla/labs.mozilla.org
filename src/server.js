@@ -91,7 +91,7 @@ app.get('/api/cache/index', (req, res) => res.json(apicache.getIndex()));
 app.get('/api/cache/clear', (req, res) => res.json(apicache.clear()));
 
 
-app.get('*', /*cache('10 minute'), */async(req, res, next) => {
+app.get('*', cache('10 minute'), async(req, res, next) => {
     try {
         const css = [];
 
