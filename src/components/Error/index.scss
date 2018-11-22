@@ -1,3 +1,5 @@
+@import '../../components/page/index';
+
 @import '../../stylesheets/variables';
 
 .container {
@@ -7,19 +9,37 @@
     justify-content: center;
     width: 100%;
 
-    h1 {
-        //.display-1;
-    }
-
-    p,
-    li,
-    a {
-        //.text-1;
-        font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
-    }
 
     .text {
         margin: 0 auto;
         max-width: 540px;
+    }
+
+    .btn {
+        align-items: center;
+        border-radius: 2px;
+        display: inline-flex;
+        justify-content: center;
+        text-align: center;
+        text-decoration: none;
+
+        background-color: $color-black;
+        border: 2px solid $color-black;
+        color: $color-white;
+        padding: 0 15px;
+        margin-top: 30px;
+
+        span {
+            color: $color-white;
+        }
+
+        &:hover {
+            background-color: $color-white;
+            color: $color-black;
+
+            span {
+                color: $color-black;
+            }
+        }
     }
 }

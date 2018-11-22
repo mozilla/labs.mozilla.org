@@ -120,7 +120,7 @@ export default withStyles(styles)(
 
             render() {
                 const {
-                    location: {pathname},
+                    location: {pathname = ''} = {},
                     theme,
                     logo: {
                         url,

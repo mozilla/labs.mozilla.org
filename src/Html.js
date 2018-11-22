@@ -36,9 +36,6 @@ export default class extends Component {
                 {title && <meta property="og:title" content={title}/>}
                 {description && <meta property="og:description" content={description}/>}
 
-                <meta property="og:image" content="http://test.url}"/>
-
-
                 {socialImage && <meta property="og:image" content={`http:${socialImage.url}`}/>}
                 {socialImage && <meta property="og:image:secure_url" content={`https:${socialImage.url}`}/>}
                 {socialImage && <meta property="og:image:type" content={socialImage.contentType}/>}
