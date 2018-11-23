@@ -39,8 +39,7 @@ export default withStyles(styles)(
         }
 
         initSwiper = async el => {
-            // if(this.props.videoCarousel && !this.props.videoCaraousel.length) {}
-            if(!el || this.swiper) {
+            if(!el || this.swiper || this.props.videoCarousel.length < 2) {
                 return
             }
 
@@ -129,11 +128,11 @@ export default withStyles(styles)(
                     disabledClass: styles.disabledM
                 },
                 on: {
-                    transitionEnd: () => {
-                        const current = el.querySelector(`.${styles.activeM}`);
-
-                        this.playVideo(current)
-                    },
+                    // transitionEnd: () => {
+                    //     const current = el.querySelector(`.${styles.activeM}`);
+                    //
+                    //     this.playVideo(current)
+                    // },
                     slideChange: () => {
                         this.stopVideo();
                     }
@@ -239,10 +238,13 @@ export default withStyles(styles)(
                                                 className={styles.slide}
                                                 style={{cursor: 'pointer'}}
                                             >
-                                                {slidesPerView ? <img
-                                                    src={props.image ? props.image.url : props.poster.url}
-                                                    alt={props.title}
-                                                /> : <Component {...props}/>}
+                                                {slidesPerView ? <div className={styles.media}>
+                                                    <img
+                                                        src={props.image ? props.image.url : props.poster.url}
+                                                        alt={props.title}
+                                                    />
+                                                    {props.poster && props.poster.url ? <div className={styles.playIcon}/> : null}
+                                                </div> : <Component {...props}/>}
                                             </div>
                                         )}
                                 </div>
