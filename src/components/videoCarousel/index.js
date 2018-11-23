@@ -70,6 +70,10 @@ export default withStyles(styles)(
                     click: e => {
                         let target = e.target;
 
+                        if(target === null) {
+                            return
+                        }
+
                         if(!target.classList.contains(`.${styles.slide}`)) {
                             target = target.closest(`.${styles.slide}`)
                         }

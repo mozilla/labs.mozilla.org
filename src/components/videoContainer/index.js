@@ -9,6 +9,7 @@ export default withStyles(styles)(
             super(props);
 
             this.video = React.createRef();
+            this.playIcon = React.createRef();
 
             this.state = {
                 paused: true
@@ -29,9 +30,27 @@ export default withStyles(styles)(
                     this.setState({
                         paused: false
                     })
-                )
+                );
+
+
+                video.addEventListener('click', () => this.play(video), false);
+
+                if(this.playIcon && this.playIcon.current) {
+                    console.log(1);
+                    this.playIcon.current.addEventListener('click', e => this.play(video), false)
+                }
             }
         }
+
+        play = video => {
+            const playPromise = video.play();
+
+            console.log('play');
+
+            playPromise
+                .then(() => {})
+                .catch(console.error);
+        };
 
         render() {
             const {
@@ -44,12 +63,16 @@ export default withStyles(styles)(
             } = this.props;
 
             return <div className={styles.content}>
-                {this.state.paused ? <div className={styles.playIcon}/> : null}
+                <div
+                    ref={this.playIcon}
+                    className={styles.playIcon}
+                    style={{display: this.state.paused ? '' : 'none'}}
+                />
                 <video
                     ref={this.video}
                     preload={'true'}
                     poster={posterUrl ? posterUrl : ''}
-                    controls
+                    controls={!this.state.paused}
                     src={url}
                 />
             </div>
