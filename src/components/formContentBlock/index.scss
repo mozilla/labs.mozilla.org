@@ -1,5 +1,9 @@
 @import '../../stylesheets/variables';
 
+main > .content:first-child {
+    padding-top: 170px;
+}
+
 .content {
     @extend %component-wrap;
     padding-bottom: 70px;
