@@ -15,6 +15,8 @@ export default withStyles(styles)(class extends Component {
         //}
 
         return <div className={styles.container}>
+            <div className={styles.media}/>
+
             <div className={styles.text}>
                 <h1>Whoops!</h1>
 

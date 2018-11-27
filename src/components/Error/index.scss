@@ -3,16 +3,27 @@
 @import '../../stylesheets/variables';
 
 .container {
+    @extend %component-wrap;
     align-items: center;
     display: flex;
     height: 100%;
     justify-content: center;
     width: 100%;
 
+    .media {
+        background: url('/404.png') center no-repeat;
+        background-size: contain;
+        height: 100%;
+        width: 100%;
+    }
 
     .text {
         margin: 0 auto;
         max-width: 540px;
+
+        ul {
+            list-style-position: inside;
+        }
     }
 
     .btn {
@@ -40,6 +51,16 @@
             span {
                 color: $color-black;
             }
+        }
+    }
+
+    @media (max-width: $mobile-max-width) {
+        flex-direction: column;
+        padding-bottom: 20px;
+        padding-top: 20px;
+
+        .media {
+            max-height: 300px;
         }
     }
 }

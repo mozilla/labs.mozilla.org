@@ -66,6 +66,12 @@ export default withStyles(styles)(
                     nextEl: `.${styles['slider-btn-next']}`,
                     disabledClass: styles.disabled
                 },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 1,
+                        spaceBetween: 10
+                    }
+                },
                 on: {
                     click: e => {
                         let target = e.target;
