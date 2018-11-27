@@ -37,6 +37,10 @@ main > .content:first-child {
         .inner {
             flex-direction: column;
 
+            > div {
+                width: 100%;
+            }
+
             .media {
                 margin-bottom: 50px;
             }
