@@ -36,7 +36,17 @@ export default withStyles(styles)(
 
         componentDidMount() {
             this.props.onRef(this);
+
+            if(process.env.BROWSER) {
+                document.addEventListener('keydown', this.handleKeyDown, false);
+            }
         }
+
+        handleKeyDown = e => {
+            if(e.key && e.key === 'Escape') {
+                this.closeModal()
+            }
+        };
 
         initSwiper = async el => {
             if(!el || this.swiper || this.props.videoCarousel.length < 2) {
@@ -106,7 +116,6 @@ export default withStyles(styles)(
                 }
             })
         };
-
 
         initModalSwiper = async el => {
             // if(this.props.videoCarousel && !this.props.videoCaraousel.length) {}
@@ -194,26 +203,24 @@ export default withStyles(styles)(
 
         componentWillUnmount() {
             if(this.swiper && this.swiper.destroy instanceof Function) {
-                // TODO: test
                 this.swiper.destroy(true, false)
             }
 
             if(this.swiperModal && this.swiperModal.destroy instanceof Function) {
-                // TODO: test
                 this.swiperModal.destroy(true, false)
+            }
+
+            if(process.env.BROWSER) {
+                document.removeEventListener('keydown', this.handleKeyDown)
             }
         }
 
-        closeModal = e => {
-            const target = e.target;
-
+        closeModal = () => {
             this.stopVideo();
 
-            if(target.classList.contains(styles.closeButton) || target.classList.contains(styles.overlay)) {
-                this.setState({
-                    visibleModal: false
-                });
-            }
+            this.setState({
+                visibleModal: false
+            });
         };
 
         render() {
