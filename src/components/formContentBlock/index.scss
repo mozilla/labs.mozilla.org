@@ -23,7 +23,11 @@ main > .content:first-child {
         justify-content: space-between;
         width: 100%;
 
-        > div {
+        > div:first-child {
+            width: 50%;
+        }
+
+        > div:last-child {
             max-width: 350px;
             width: 50%;
         }
@@ -38,7 +42,15 @@ main > .content:first-child {
             flex-direction: column;
 
             > div {
-                width: 100%;
+                &:first-child,
+                &:last-child {
+                    max-width: 100%;
+                    width: 100%;
+                }
+
+                &:first-child {
+                    max-width: 500px;
+                }
             }
 
             .media {
