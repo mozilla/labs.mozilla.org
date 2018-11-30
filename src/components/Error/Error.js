@@ -25,7 +25,7 @@ export default withStyles(styles)(class extends Component {
                     <li>If you’ve found an issue with one of our websites, we’d appreciate it if you could report the problem in <a
                         href="https://www.bugzilla.org/" target="_blank">Bugzilla</a>, our bug tracker. One of our developers will take a look at it as soon as possible.</li>
                     <li>If you followed a link, it’s probably broken.</li>
-                    <li>If you’re not sure what you’re looking for, start at <a href="https://labs.mozilla.org" target="_blank">labs.mozilla.org.</a></li>
+                    <li>If you’re not sure what you’re looking for, start at <a href="http://mozillalabs.com/" target="_blank">labs.mozilla.org.</a></li>
                 </ul>
 
                 <a href="/" className={styles.btn} data-type="button">
