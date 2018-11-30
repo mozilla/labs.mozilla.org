@@ -32,20 +32,15 @@ export default withStyles(styles)(
                     })
                 );
 
-
-                video.addEventListener('click', () => this.play(video), false);
-
                 if(this.playIcon && this.playIcon.current) {
-                    console.log(1);
-                    this.playIcon.current.addEventListener('click', e => this.play(video), false)
+                    this.playIcon.current
+                        .addEventListener('click', () => this.play(video), false)
                 }
             }
         }
 
         play = video => {
             const playPromise = video.play();
-
-            console.log('play');
 
             playPromise
                 .then(() => {})
