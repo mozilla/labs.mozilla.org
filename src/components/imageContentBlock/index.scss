@@ -120,10 +120,4 @@ $fill-color: red;
             }
         }
     }
-
-    @media (max-width: $mobile-max-width) {
-        .text {
-            text-align: center;
-        }
-    }
 }
