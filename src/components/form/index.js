@@ -17,9 +17,9 @@ export default withStyles(styles)(
                 success: false
             };
 
-            this.form = React.createRef(); // #newsletter_form
-            this.errors = React.createRef(); // #newsletter_errors
-            this.thanks = React.createRef(); // #newsletter_thanks
+            this.form = React.createRef();
+            this.errors = React.createRef();
+            this.thanks = React.createRef();
             this.privacy = React.createRef();
         }
 
@@ -48,7 +48,6 @@ export default withStyles(styles)(
             const {errorArray} = this.state;
 
             if(!errorArray.length) {
-                // no error messages, forward to server for better troubleshooting
                 this.form.current.setAttribute('data-skip-xhr', true);
                 this.form.current.submit();
             }
@@ -74,7 +73,6 @@ export default withStyles(styles)(
             evt.preventDefault();
             evt.stopPropagation();
 
-            // clear old errors
             this.setState({
                 errors: []
             });
@@ -114,9 +112,9 @@ export default withStyles(styles)(
                 title,
                 formId = 'mozilla-technology',
                 description,
-                newsletters = '', // "mozilla-and-you"
-                fmt = '', // 'H'
-                formAction = '', // "https://www.mozilla.org/en-US/newsletter/"
+                newsletters = '',
+                fmt = '',
+                formAction = '',
                 button: [Component, props] = [],
                 privacyText = '',
                 thanksText

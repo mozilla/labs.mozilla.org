@@ -118,7 +118,6 @@ export default withStyles(styles)(
         };
 
         initModalSwiper = async el => {
-            // if(this.props.videoCarousel && !this.props.videoCaraousel.length) {}
             if(!el || this.swiperModal) {
                 return
             }
@@ -147,11 +146,6 @@ export default withStyles(styles)(
                     disabledClass: styles.disabledM
                 },
                 on: {
-                    // transitionEnd: () => {
-                    //     const current = el.querySelector(`.${styles.activeM}`);
-                    //
-                    //     this.playVideo(current)
-                    // },
                     slideChange: () => {
                         this.stopVideo();
                     }

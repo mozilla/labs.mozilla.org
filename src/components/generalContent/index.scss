@@ -142,7 +142,6 @@ $gutterWidth: 30px;
     }
 
     button {
-        //background: $color-link-normal;
         color: #FFF;
         cursor: pointer;
         display: inline-block;
@@ -154,14 +153,6 @@ $gutterWidth: 30px;
         padding: 19px 22px;
         text-align: center;
         transition: .3s;
-
-        &:hover {
-            //background: $color-link-hover;
-        }
-
-        &:active {
-            //background: $color-link-active;
-        }
     }
 
     hr {

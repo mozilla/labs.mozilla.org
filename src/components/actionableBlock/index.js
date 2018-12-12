@@ -21,12 +21,7 @@ export default withStyles(styles)(
                     url: bgImage = ''
                 } = {},
                 logo: {
-                    url,
-                    details: {
-                        image: {
-                            width
-                        } = {}
-                    } = {}
+                    url
                 } = {},
                 button: [Component, props] = []
             } = this.props;

@@ -13,14 +13,10 @@ export default withStyles(styles)(
     connect(
         ({
             desktopMenuVisibility,
-            mobileMenuVisibility,
-            headerInverted,
-            headerVisibility
+            mobileMenuVisibility
         }) => ({
             desktopMenuVisibility,
-            mobileMenuVisibility,
-            headerInverted,
-            headerVisibility
+            mobileMenuVisibility
         })
     )(
         class extends Component {
@@ -124,7 +120,7 @@ export default withStyles(styles)(
                     theme,
                     logo: {
                         url,
-                        title,
+                        title
                     } = {},
                     items,
 

@@ -24,13 +24,7 @@ export default withStyles(styles)(
                 description,
                 textDarkBackground,
                 backgroundImage: {
-                    title: backgroundImageTitle = '',
-                    url,
-                    details: {
-                        image: {
-                            width
-                        } = {}
-                    } = {}
+                    url
                 } = {}
             } = this.props;
 

@@ -1,9 +1,7 @@
 @import '../../stylesheets/variables';
 
 .content {
-    background-color: $color-black;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: $color-black center no-repeat;
     background-size: cover;
 
     &[data-observing='true'] {

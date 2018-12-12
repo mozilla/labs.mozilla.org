@@ -1,6 +1,6 @@
 {
-    "name": "firefox-labs",
-    "version": "0.0.1",
+    "name": "mozilla-labs",
+    "version": "1.0.0",
     "private": true,
     "scripts": {
         "build": "babel-node tools/run build",
@@ -33,20 +33,16 @@
         "connect-slashes": "^1.3.1",
         "contentful": "^7.0.3",
         "cookie-parser": "^1.4.3",
-        "dateformat": "^3.0.2",
         "express": "^4.16.3",
         "file-loader": "^2.0.0",
-        "google-maps": "^3.3.0",
         "helmet": "^3.13.0",
         "history": "^4.7.2",
         "intersection-observer": "^0.5.0",
         "isomorphic-style-loader": "^4.0.0",
         "markdown-it": "^8.4.2",
         "markdown-it-implicit-figures": "^0.9.0",
-        "millify": "^2.0.1",
         "node-fetch": "^2.2.0",
         "node-sass": "^4.10.0",
-        "object-fit-images": "^3.2.4",
         "react": "^16.5.2",
         "react-dom": "^16.5.2",
         "react-redux": "^5.0.7",
@@ -54,9 +50,7 @@
         "sitemap": "^2.0.1",
         "smoothscroll-polyfill": "^0.4.3",
         "source-map-support": "^0.5.9",
-        "swiper": "^4.4.1",
-        "transliteration": "^1.6.6",
-        "wheel-indicator": "^1.2.0"
+        "swiper": "^4.4.1"
     },
     "devDependencies": {
         "@babel/core": "^7.0.0",
@@ -162,7 +156,6 @@
     },
     "main": "index.js",
     "repository": "git@gitlab.com:ramotion/mozilla-labs.git",
-    "description": "Firefox Labs landing",
-    "author": "Vlad Shumov <shumov.vlad@gmail.com>",
-    "license": "MIT"
+    "description": "Mozilla Labs landing",
+    "author": "Vlad Shumov <shumov.vlad@gmail.com>"
 }

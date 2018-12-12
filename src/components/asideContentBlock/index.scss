@@ -1,7 +1,6 @@
 @import '../../stylesheets/variables';
 
 .content {
-
     &[data-observing='true'] {
         @extend %observing;
     }

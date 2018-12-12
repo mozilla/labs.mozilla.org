@@ -1,6 +1,5 @@
 @import '../../stylesheets/variables';
 
-// FORM
 .content {
     overflow: hidden;
     position: relative;
@@ -36,10 +35,10 @@
     }
 
     .newsletter_errors {
-        background-color: rgba(0, 0, 0, .1); // incase it's on a white background
+        background-color: rgba(0, 0, 0, .1);
         border: 1px solid #C00;
-        box-shadow: 0 0 0 1px #FFF; // incase it's on a black background
-        display: none; /* hide by default */
+        box-shadow: 0 0 0 1px #FFF;
+        display: none;
         margin-bottom: 20px;
         padding: 20px;
     }
@@ -54,7 +53,7 @@
     }
 
     .form_group-agree {
-        padding-left: 1.5em; // roughly width of a checkbox
+        padding-left: 1.5em;
         text-indent: -1.5em;
     }
 
@@ -94,19 +93,19 @@
         width: 16px;
 
         &:after {
-            display: none;
             content: '';
+            display: none;
             position: absolute;
         }
 
         &:after {
-            left: 4px;
-            top: 0;
-            width: 4px;
-            height: 8px;
             border: solid $color-black;
             border-width: 0 3px 3px 0;
+            height: 8px;
+            left: 4px;
+            top: 0;
             transform: rotate(45deg);
+            width: 4px;
         }
     }
 

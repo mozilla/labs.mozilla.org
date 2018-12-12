@@ -24,7 +24,6 @@ const cache = apicache.middleware;
 const port = process.env.PORT || 3000;
 
 
-// import assets from './asset-manifest.json'; // eslint-disable-line import/no-unresolved
 import chunks from './chunk-manifest.json'; // eslint-disable-line import/no-unresolved
 
 app.use(helmet());
@@ -91,7 +90,7 @@ app.get('/api/cache/index', (req, res) => res.json(apicache.getIndex()));
 app.get('/api/cache/clear', (req, res) => res.json(apicache.clear()));
 
 
-app.get('*', cache('10 minute'), async(req, res, next) => {
+app.get('*', cache('60 minute'), async(req, res, next) => {
     try {
         const css = [];
 

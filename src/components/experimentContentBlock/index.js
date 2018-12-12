@@ -19,8 +19,7 @@ export default withStyles(styles)(
                 description,
                 image: {
                     title: imageTitle = '',
-                    url,
-                    details: {width} = {}
+                    url
                 } = {}
             } = this.props;
 
