@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-const googleTagManagerId = process.env.googleTagManagerId || '';
+const googleTagManagerId = process.env.GOOGLE_TAGMANAGER_ID || '';
 
 export default class extends Component {
     render() {
