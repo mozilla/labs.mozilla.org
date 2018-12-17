@@ -22,7 +22,6 @@ export default withStyles(styles)(
                 title,
                 buttons,
                 description,
-                textDarkBackground,
                 backgroundImage: {
                     url
                 } = {}
@@ -34,9 +33,7 @@ export default withStyles(styles)(
             >
                 <div className={styles.inner}>
                     <div>
-                        <div className={
-                            `${styles.text} ${textDarkBackground ? styles.darkText : ''}`
-                        }>
+                        <div className={styles.text}>
                             <h2>{title}</h2>
                             <div>
                                 <p>{description}</p>

@@ -16,10 +16,15 @@
         width: 100%;
 
         .text {
-            max-width: 424px;
+            max-width: 465px;
 
             > div {
                 margin-top: 32px;
+            }
+
+            h2,
+            p {
+                box-decoration-break: clone;
             }
 
             p {
@@ -33,15 +38,15 @@
                 margin-right: 10px;
             }
 
-            &.darkText {
+            //&.darkText {
                 h2, p {
-                    background-color: $color-black;
-                    box-shadow: 10px 0 0 $color-black, -10px 0 0 $color-black;
-                    color: $color-white;
+                    background-color: $color-white;
+                    box-shadow: 15px 0 0 $color-white, -15px 0 0 $color-white;
+                    color: $color-text;
                     display: inline;
                     line-height: 1.4;
                 }
-            }
+            //}
         }
 
         .btnWrap {

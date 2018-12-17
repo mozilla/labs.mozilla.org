@@ -34,6 +34,20 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+app.use((req, res, next) => {
+    if(
+        process.env.NODE_ENV === 'production' &&
+        (req.headers['x-forwarded-proto'] !== 'https' ||
+            req.get('Host').indexOf('www.'))
+    ) {
+        return res.redirect(
+            301,
+            ['https://', req.get('Host').replace(/^www\./, ''), req.url].join(''),
+        );
+    }
+    return next();
+});
+
 // sitemap
 app.get('/sitemap.xml', (req, res, next) => {
     res.sendFile(`${__dirname}/public/sitemap.xml`);
