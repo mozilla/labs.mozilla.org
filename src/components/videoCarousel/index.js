@@ -25,7 +25,8 @@ export default withStyles(styles)(
             super(props);
 
             this.state = {
-                visibleModal: false
+                visibleModal: false,
+                paused: false
             }
         }
 
@@ -164,15 +165,17 @@ export default withStyles(styles)(
                 sliders.push(document.querySelector(`.${styles.modalSlider}`))
             }
 
-            if(!sliders.length) {
-                return
+            if(sliders.length) {
+                sliders.forEach(slider => {
+                    const videos = slider.querySelectorAll('video');
+
+                    [...videos].forEach(video => video.pause());
+                });
+
+                this.setState(state => ({
+                    paused: !state.paused
+                }))
             }
-
-            sliders.forEach(slider => {
-                const videos = slider.querySelectorAll('video');
-
-                [...videos].forEach(video => video.pause());
-            });
         };
 
         playVideo = current => {
@@ -303,7 +306,7 @@ export default withStyles(styles)(
                                                 className={`${styles.slide} ${styles.slideM}`}
                                                 style={{cursor: 'pointer'}}
                                             >
-                                                <Component {...props}/>
+                                                <Component pause={this.state.paused} {...props}/>
                                             </div>
                                         )}
                                 </div>

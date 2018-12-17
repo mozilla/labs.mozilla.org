@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import YouTube from 'react-youtube';
 import withStyles from 'isomorphic-style-loader/lib/withStyles'
 
 import styles from './index.scss'
@@ -10,6 +11,7 @@ export default withStyles(styles)(
 
             this.video = React.createRef();
             this.playIcon = React.createRef();
+            this.ytVideo = React.createRef();
 
             this.state = {
                 paused: true
@@ -47,6 +49,17 @@ export default withStyles(styles)(
                 .catch(console.error);
         };
 
+        componentWillUpdate() {
+            this.ytPause();
+        }
+
+        ytPause = () => {
+            if(this.ytVideo && this.ytVideo.current && this.ytVideo.current.internalPlayer) {
+                this.ytVideo.current.internalPlayer.pauseVideo();
+            }
+        };
+
+
         render() {
             const {
                 video: {
@@ -54,22 +67,32 @@ export default withStyles(styles)(
                 } = {},
                 poster: {
                     url: posterUrl = ''
-                } = {}
+                } = {},
+                youtubeVideoId
             } = this.props;
 
             return <div className={styles.content}>
-                <div
-                    ref={this.playIcon}
-                    className={styles.playIcon}
-                    style={{display: this.state.paused ? '' : 'none'}}
-                />
-                <video
-                    ref={this.video}
-                    preload={'true'}
-                    poster={posterUrl ? posterUrl : ''}
-                    controls={!this.state.paused}
-                    src={url}
-                />
+                {youtubeVideoId ? <div className={styles.videoWrapper}>
+                    <YouTube
+                        ref={this.ytVideo}
+                        videoId={youtubeVideoId}
+                    />
+                </div> : [
+                    <div
+                        key="playIcon"
+                        ref={this.playIcon}
+                        className={styles.playIcon}
+                        style={{display: this.state.paused ? '' : 'none'}}
+                    />,
+                    <video
+                        key="video"
+                        ref={this.video}
+                        preload={'true'}
+                        poster={posterUrl ? posterUrl : ''}
+                        controls={!this.state.paused}
+                        src={url}
+                    />]
+                }
             </div>
         }
     }
