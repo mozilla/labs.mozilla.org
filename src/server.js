@@ -36,6 +36,7 @@ app.use(bodyParser.json());
 
 app.use((req, res, next) => {
     if(
+        process.env.FORCE_HTTPS &&
         process.env.NODE_ENV === 'production' &&
         (req.headers['x-forwarded-proto'] !== 'https' ||
             req.get('Host').indexOf('www.'))
@@ -104,7 +105,7 @@ app.get('/api/cache/index', (req, res) => res.json(apicache.getIndex()));
 app.get('/api/cache/clear', (req, res) => res.json(apicache.clear()));
 
 
-app.get('*', cache('60 minute'), async(req, res, next) => {
+app.get('*', cache(process.env.CACHE || '60 minute'), async(req, res, next) => {
     try {
         const css = [];
 

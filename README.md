@@ -10,8 +10,14 @@ cd [repo]
 yarn install
 ```
 ## Required environment variables (contentful):
-`SPACE_ID`
-`SPACE_API_KEY`
+`process.env.SPACE_ID`
+`process.env.SPACE_API_KEY`
+
+## Cache
+`process.env.CACHE`
+
+## HTTPS redirect
+`process.env.FORCE_HTTPS`
 
 
 ### Development
