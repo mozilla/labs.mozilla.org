@@ -28,11 +28,11 @@ export default withStyles(styles)(
 
             return <section
                 className={styles.content}
-                style={bgImage ? {backgroundImage: `url(${bgImage})`} : {}}
+                style={bgImage ? {backgroundImage: `url(https://${bgImage})`} : {}}
             >
                 <div className={styles.inner}>
                     <div className={styles.media}>
-                        <img src={url} alt={title}/>
+                        <img src={`https:${url}`} alt={title}/>
                     </div>
 
                     <div className={styles.text}>

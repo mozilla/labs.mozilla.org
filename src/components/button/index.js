@@ -82,10 +82,10 @@ export default withStyles(styles)(
             >
                 {imageUrl ? reImage.test(imageUrl) ?
                     <img
-                        src={`${imageUrl}?scale=fit&w=${Math.ceil(width/2).toFixed()}`}
-                        srcSet={`${imageUrl} 2x`}
+                        src={`https:${imageUrl}?scale=fit&w=${Math.ceil(width/2).toFixed()}`}
+                        srcSet={`https:${imageUrl} 2x`}
                         alt={title}/> :
-                    <img src={imageUrl} alt={title}/> :
+                    <img src={`https:${imageUrl}`} alt={title}/> :
                     <span>{title}</span>}
             </a>
         }

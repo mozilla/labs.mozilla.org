@@ -10,7 +10,7 @@ export default class extends Component {
         } = this.props;
 
         return <div>
-            <img src={url} alt={title}/>
+            <img src={`https:${url}`} alt={title}/>
         </div>
     }
 }

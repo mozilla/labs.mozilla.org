@@ -29,8 +29,8 @@ export default withStyles(styles)(
                 <a href={link && link} className={styles.inner}>
                     <div className={styles.media}>
                         <img
-                            src={`${url}?w=${Math.ceil(width/2).toFixed()}`}
-                            srcSet={`${url} 2x`}
+                            src={`https:${url}?w=${Math.ceil(width/2).toFixed()}`}
+                            srcSet={`https:${url} 2x`}
                             alt={title}
                         />
                     </div>

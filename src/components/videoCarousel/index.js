@@ -251,7 +251,7 @@ export default withStyles(styles)(
                                             >
                                                 {slidesPerView ? <div className={styles.media}>
                                                     <img
-                                                        src={props.image ? props.image.url : props.poster.url}
+                                                        src={`https:${props.image ? props.image.url : props.poster.url}`}
                                                         alt={props.title}
                                                     />
                                                     {props.poster && props.poster.url ? <div className={styles.playIcon}/> : null}

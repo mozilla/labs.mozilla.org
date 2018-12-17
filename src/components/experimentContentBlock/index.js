@@ -26,7 +26,7 @@ export default withStyles(styles)(
             return <div className={styles.content}>
                 <div className={styles.inner}>
                     <div className={styles.media}>
-                        <img src={url} alt={imageTitle}/>
+                        <img src={`https:${url}`} alt={imageTitle}/>
                     </div>
 
                     <div className={styles.text}>

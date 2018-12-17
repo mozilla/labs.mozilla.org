@@ -140,7 +140,7 @@ export default withStyles(styles)(
                             className={styles.logo}
                             onClick={this.closeMobile}
                         >
-                            <img src={url} alt={title}/>
+                            <img src={`https:${url}`} alt={title}/>
                         </a>
 
                         <ul>
