@@ -304,6 +304,8 @@ const clientConfig = {
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': isDebug ? '"development"' : '"production"',
             'process.env.BROWSER': true,
+            'process.env.FORCE_HTTPS': `"${process.env.FORCE_HTTPS}"`,
+            'process.env.CACHE': `"${process.env.CACHE}"`,
             'process.env.GOOGLE_TAGMANAGER_ID': `"${process.env.GOOGLE_TAGMANAGER_ID}"`,
             'process.env.SPACE_ID': `"${process.env.SPACE_ID}"`,
             'process.env.SPACE_API_KEY': `"${process.env.SPACE_API_KEY}"`,
