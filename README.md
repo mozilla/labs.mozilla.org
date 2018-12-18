@@ -35,4 +35,5 @@ yarn build --release
 yarn serve --release
 ```
 
-
+### Heroku settings
+`heroku config:set NPM_CONFIG_PRODUCTION=false`
