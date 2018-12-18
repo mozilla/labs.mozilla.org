@@ -36,7 +36,7 @@ app.use(bodyParser.json());
 
 app.use((req, res, next) => {
     if(
-        process.env.FORCE_HTTPS &&
+        process.env.FORCE_HTTPS === 'true' &&
         process.env.NODE_ENV === 'production' &&
         (req.headers['x-forwarded-proto'] !== 'https' ||
             req.get('Host').indexOf('www.'))
