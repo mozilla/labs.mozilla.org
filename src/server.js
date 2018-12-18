@@ -35,16 +35,17 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-    if(
-        process.env.FORCE_HTTPS === 'true' &&
-        process.env.NODE_ENV === 'production' &&
-        (req.headers['x-forwarded-proto'] !== 'https' ||
-            req.get('Host').indexOf('www.'))
-    ) {
-        return res.redirect(
-            301,
-            ['https://', req.get('Host').replace(/^www\./, ''), req.url].join(''),
-        );
+    if(process.env.FORCE_HTTPS === 'true' && process.env.NODE_ENV === 'production') {
+        if(req.headers['x-forwarded-proto'] != 'https') {
+            console.log('redirect', ['https://', req.get('Host').replace(/^www\./, ''), req.url].join(''));
+
+            return res.redirect(
+                301,
+                ['https://', req.get('Host').replace(/^www\./, ''), req.url].join('')
+            );
+        } else {
+            return next()
+        }
     }
     return next();
 });
