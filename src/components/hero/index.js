@@ -28,8 +28,6 @@ export default withStyles(styles)(
                 } = {}
             } = this.props;
 
-            console.log(whiteText);
-
             return <section
                 className={styles.content}
                 style={{backgroundImage: `url(${url})`}}
