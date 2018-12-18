@@ -22,10 +22,13 @@ export default withStyles(styles)(
                 title,
                 buttons,
                 description,
+                whiteText,
                 backgroundImage: {
                     url
                 } = {}
             } = this.props;
+
+            console.log(whiteText);
 
             return <section
                 className={styles.content}
@@ -33,20 +36,23 @@ export default withStyles(styles)(
             >
                 <div className={styles.inner}>
                     <div>
-                        <div className={styles.text}>
+                        <div className={[
+                            styles.text,
+                            whiteText && styles.whiteText
+                        ].filter(Boolean).join(' ')}>
                             <h2>{title}</h2>
                             <div>
                                 <p>{description}</p>
                             </div>
                         </div>
 
-                        <div className={styles.btnWrap}>
-                            {buttons && buttons.length && buttons
+                        {buttons && buttons.length && <div className={styles.btnWrap}>
+                            {buttons
                                 .filter(Boolean)
                                 .map(([Component, props], index) =>
                                     <Component key={props.id + index} {...props}/>
                                 )}
-                        </div>
+                        </div>}
                     </div>
                 </div>
             </section>
