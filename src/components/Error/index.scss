@@ -15,11 +15,13 @@
         background-size: contain;
         height: 100%;
         width: 100%;
+        margin-right: 30px;
+        max-width: 60%;
     }
 
     .text {
         margin: 0 auto;
-        max-width: 540px;
+        max-width: 650px;
 
         ul {
             list-style-position: inside;
@@ -60,6 +62,8 @@
         padding-top: 20px;
 
         .media {
+            max-width: 100%;
+            margin: 0;
             max-height: 600px;
         }
     }
