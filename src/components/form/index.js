@@ -60,7 +60,9 @@ export default withStyles(styles)(
         };
 
         privacyError = node => {
-            node.classList.add(styles.privacyError)
+            if(node) {
+                node.classList.add(styles.privacyError)
+            }
         };
 
         newsletterSubscribe = evt => {
@@ -89,26 +91,53 @@ export default withStyles(styles)(
             const newsletter = this.props.newsletters.trim();
             const email = this.state.email;
             const privacy = this.state.privacy ? '&privacy=true' : '';
-            const params = `?email=${encodeURIComponent(email)}&newsletters=${newsletter}${privacy}&fmt=${fmt}&source_url=${encodeURIComponent(process.env.BROWSER && document ? document.location.href : '')}`;
-            const url = this.props.formAction + params;
+            const url = this.props.formAction;
 
-            if(url) {
-                fetch(url, {
-                    method: 'POST'
-                })
-                    .then(response => response.ok)
-                    .then(data => {
-                        if(data) {
-                            this.newsletterThanks();
-                        } else {
-                            this.newsletterError(data)
-                        }
-                    })
-                    .catch(err => {
-                        console.log('ERROR', err);
-                        this.newsletterError(err)
-                    })
+            if(!url) {
+                return this.newsletterError()
             }
+
+            const  params = 'email=' + encodeURIComponent(email) +
+                '&newsletters=' + newsletter +
+                privacy +
+                '&fmt=' + fmt +
+                '&source_url=' + encodeURIComponent(document.location.href);
+
+            const xhr = new XMLHttpRequest();
+
+            xhr.onload = r => {
+                if(r.target.status >= 200 && r.target.status < 300) {
+                    const response = r.target.response;
+
+                    if (response.success === true) {
+                        this.newsletterThanks();
+                    }
+                    else {
+                        if(response.errors) {
+                            for(let i = 0; i < response.errors.length; i++) {
+                                this.errorArray.push(response.errors[i]);
+                            }
+                        }
+                        this.newsletterError(new Error());
+                    }
+                } else {
+                    this.newsletterError(new Error());
+                }
+            };
+
+            xhr.onerror = e => {
+                this.newsletterError(e);
+            };
+
+            xhr.open('POST', url, true);
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader('X-Requested-With','XMLHttpRequest');
+            xhr.timeout = 5000;
+            xhr.ontimeout = this.newsletterError;
+            xhr.responseType = 'json';
+            xhr.send(params);
+
+            return false;
         };
 
         render() {
