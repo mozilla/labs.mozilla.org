@@ -6,6 +6,7 @@
     @extend %component-wrap;
     align-items: center;
     display: flex;
+    height: 100%;
     justify-content: center;
     width: 100%;
 
@@ -72,6 +73,7 @@
         flex-direction: column;
         padding-bottom: 20px;
         padding-top: 20px;
+        height: auto;
 
         .text {
             min-width: auto;
