@@ -27,8 +27,8 @@ export default withStyles(styles)(
                 ${grid && styles[grid]}`
             }>
                 <a
-                    target={props && props.blank && '_blank'}
-                    rel={props && props.rel && 'noopener'}
+                    target={props && props.blank ? '_blank' : undefined}
+                    rel={props && props.rel ? 'noopener' : undefined}
                     href={props && props.url}
                     className={styles.inner}
                 >
