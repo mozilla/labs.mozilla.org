@@ -45,7 +45,7 @@ export default class extends Component {
                 <meta name="twitter:card" content="summary_large_image"/>
                 {title && <meta name="twitter:title" content={title}/>}
                 {description && <meta name="twitter:description" content={description}/>}
-                {socialImage && <meta name="twitter:image" content={socialImage.url}/>}
+                {socialImage && <meta name="twitter:image" content={`https:${socialImage.url}`}/>}
 
                 {scripts && scripts.map(script => <link
                     key={script}
