@@ -89,16 +89,20 @@ export default withStyles(styles)(
             const newsletter = this.props.newsletters.trim();
             const email = this.state.email;
             const privacy = this.state.privacy ? '&privacy=true' : '';
-            const params = `email=${encodeURIComponent(email)}&newsletters=${newsletter}${privacy}&fmt=${fmt}&source_url=${encodeURIComponent(process.env.BROWSER && document ? document.location.href : '')}`;
+            const params = `?email=${encodeURIComponent(email)}&newsletters=${newsletter}${privacy}&fmt=${fmt}&source_url=${encodeURIComponent(process.env.BROWSER && document ? document.location.href : '')}`;
             const url = this.props.formAction + params;
 
             if(url) {
                 fetch(url, {
                     method: 'POST'
                 })
-                    .then(response => response.json)
+                    .then(response => response.ok)
                     .then(data => {
-                        this.newsletterThanks();
+                        if(data) {
+                            this.newsletterThanks();
+                        } else {
+                            this.newsletterError(data)
+                        }
                     })
                     .catch(err => {
                         console.log('ERROR', err);

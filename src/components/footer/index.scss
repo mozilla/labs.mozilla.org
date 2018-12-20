@@ -34,7 +34,7 @@
         margin-bottom: 56px;
 
         img {
-            max-height: 32px;
+            height: 32px;
         }
     }
 
@@ -84,13 +84,9 @@
             flex-wrap: wrap;
 
             a {
+                font-size: 0.75rem;
                 margin-right: 15px;
-                text-decoration: underline;
                 white-space: nowrap;
-
-                &:hover {
-                    text-decoration: none;
-                }
             }
         }
     }

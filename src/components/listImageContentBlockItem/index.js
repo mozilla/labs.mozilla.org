@@ -9,7 +9,6 @@ export default withStyles(styles)(
             const {
                 title: mainTitle = '',
                 description,
-                link,
                 theme,
                 grid,
                 image: {
@@ -18,7 +17,8 @@ export default withStyles(styles)(
                     details: {
                         image: {width} = {}
                     } = {}
-                } = {}
+                } = {},
+                linkItem: [Component, props] = []
             } = this.props;
 
             return <div className={
@@ -26,7 +26,12 @@ export default withStyles(styles)(
                 ${theme ? styles[theme] : ''}
                 ${grid && styles[grid]}`
             }>
-                <a href={link && link} className={styles.inner}>
+                <a
+                    target={props && props.blank && '_blank'}
+                    rel={props && props.rel && 'noopener'}
+                    href={props && props.url}
+                    className={styles.inner}
+                >
                     <div className={styles.media}>
                         <img
                             src={`https:${url}?w=${Math.ceil(width/2).toFixed()}`}
