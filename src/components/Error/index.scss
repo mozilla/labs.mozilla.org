@@ -6,7 +6,6 @@
     @extend %component-wrap;
     align-items: center;
     display: flex;
-    height: 100%;
     justify-content: center;
     width: 100%;
 
@@ -22,9 +21,22 @@
     .text {
         margin: 0 auto;
         max-width: 650px;
+        min-width: 550px;
 
         ul {
             list-style-position: inside;
+
+            li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .btnWrap {
+        display: flex;
+
+        > a:first-child {
+            margin-right: 30px;
         }
     }
 
@@ -61,10 +73,24 @@
         padding-bottom: 20px;
         padding-top: 20px;
 
+        .text {
+            min-width: auto;
+        }
+
         .media {
             max-width: 100%;
+            min-height: 200px;
             margin: 0;
             max-height: 600px;
+        }
+
+        .btnWrap {
+            align-items: center;
+            flex-direction: column;
+
+            > a:first-child {
+                margin-right: 0;
+            }
         }
     }
 }

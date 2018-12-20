@@ -28,9 +28,18 @@ export default withStyles(styles)(class extends Component {
                     <li>If you’re not sure what you’re looking for, start at <a href="http://mozillalabs.com/" target="_blank">labs.mozilla.org.</a></li>
                 </ul>
 
-                <a href="/" className={styles.btn} data-type="button">
-                    <span>Back</span>
-                </a>
+                {/*<a href="/" className={styles.btn} data-type="button">*/}
+                {/*<span>Back</span>*/}
+                {/*</a>*/}
+
+                <div className={styles.btnWrap}>
+                    <a href="/projects/" data-type="button" className={styles.btn}>
+                        <span>Discover new experiments</span>
+                    </a>
+                    <a href="/learn/" data-type="button" className={styles.btn}>
+                        <span>Discover innovation at Mozilla</span>
+                    </a>
+                </div>
             </div>
         </div>
     }
